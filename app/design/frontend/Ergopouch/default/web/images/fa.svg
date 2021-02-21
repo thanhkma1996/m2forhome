@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="chevron-down" viewBox="0 0 30 30">
+        <path fill="#000000" d=" M441.9 280.7L422.1 300.5C417.4 305.2 409.8 305.2 405.1 300.5L224 119.8L42.9 300.5C38.2 305.2 30.6 305.2 25.9 300.5L6.1 280.7C1.4 276 1.4 268.4 6.1 263.7L215.5 54.3C220.2 49.6 227.8 49.6 232.5 54.3L441.9 263.7C446.6 268.4 446.6 276 441.9 280.7z" />
+    </symbol>
+</svg>

@@ -1,0 +1,93 @@
+& when (@media-common = true) {
+    .block-get-dressed {
+        .container {
+            max-width: 1142px;
+            display: block;
+            margin: 0 auto;
+            .row {
+                .parent-flex(row, nowrap);
+                margin-top: 84px;
+                border-top: 2px solid @theme__color_brown4;
+                border-bottom: 2px solid @theme__color_brown4;
+                padding: 70px 0 65px;
+
+                .show-on-desktop {
+                    display: block;
+                }
+
+                .show-on-mobile {
+                    display: none;
+                }
+
+                .col-left {
+                    width: 50%;
+                    max-width: 370px;
+                    margin-right: 103px;
+
+                    h2 {
+                        .lib-font-size(40);
+                        margin: 2px 0 70px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        .lib-font-size(18);
+                        .lib-line-height(25);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+    .block-get-dressed {
+        .container {
+            .row {
+                .parent-flex(row, wrap);
+                margin-top: 30px;
+                padding: 30px 0 50px;
+
+                .col-left {
+                    width: 100%;
+                    max-width: none;
+                    margin-right: 0;
+
+                    h2 {
+                        .lib-font-size(30);
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+
+                    p {
+                        display: none;
+                    }
+                }
+
+                .col-right {
+                    width: 100%;
+                    img {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .block-get-dressed {
+        .container {
+            .row {
+                .show-on-desktop {
+                    display: none;
+                }
+
+                .show-on-mobile {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

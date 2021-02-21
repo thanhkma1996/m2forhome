@@ -1,0 +1,36 @@
+// /**
+//  * Copyright © digital Internet, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Global Theme Tooltip Styling
+//  _____________________________________________
+
+
+//
+//  Tooltip specific variables
+//  _____________________________________________
+@checkout-tooltip-content-mobile__right: 10px;
+@checkout-tooltip-content-mobile__top: 10px;
+@checkout-tooltip-icon-arrow__font-size: 14px;
+@checkout-tooltip-content__background-color: @primary__color;
+@checkout-tooltip-icon-arrow__left: '';
+@checkout-tooltip-content__border-color: @border-primary__color;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .tooltip.wrapper,
+    .field-tooltip {
+        .lib-tooltip();
+
+        .label {
+            > span {
+                @abs-no-display();
+            }
+        }
+    }
+}

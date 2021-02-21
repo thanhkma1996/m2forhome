@@ -1,0 +1,1436 @@
+._lib-navigation-horizontal-level0__desktop(
+    @_nav-level0-item-font-size: @navigation-level0-item_desktop__font-size,
+    @_nav-level0-item-line-height: @navigation-level0-item_desktop__line-height,
+    @_nav-level0-item-margin: @navigation-level0-item_desktop__margin,
+    @_nav-level0-item-padding: @navigation-level0-item_desktop__padding,
+    @_nav-level0-item-text-align: @navigation-level0-item_desktop__align,
+    @_nav-level0-item-background-color: @navigation-level0-item_desktop__background,
+    @_nav-level0-item-border: @navigation-level0-item_desktop__border,
+    @_nav-level0-item-color: @navigation-level0-item_desktop__color,
+    @_nav-level0-item-text-decoration: @navigation-level0-item_desktop__text-decoration,
+    @_nav-level0-item-text-transform: @navigation-level0-item_desktop__text-transform,
+    @_nav-level0-item-font-weight: @navigation-level0-item_desktop__font-weight,
+
+    @_nav-level0-item-background-color-hover: @navigation-level0-item_desktop__hover__background,
+    @_nav-level0-item-border-hover: @navigation-level0-item_desktop__hover__border,
+    @_nav-level0-item-color-hover: @navigation-level0-item_desktop__hover__color,
+    @_nav-level0-item-text-decoration-hover: @navigation-level0-item_desktop__hover__text-decoration,
+
+    @_nav-level0-item-background-color-active: @navigation-level0-item_desktop__active__background,
+    @_nav-level0-item__active__border-color: @navigation-level0-item_desktop__active__border-color,
+    @_nav-level0-item__active__border-style: @navigation-level0-item_desktop__active__border-style,
+    @_nav-level0-item__active__border-width: @navigation-level0-item_desktop__active__border-width,
+    @_nav-level0-item-color-active: @navigation-level0-item_desktop__active__color,
+    @_nav-level0-item-text-decoration-active: @navigation-level0-item_desktop__active__text-decoration
+) {
+    li.level0 {
+        .lib-css(border-top, none);
+        .lib-css(margin, @_nav-level0-item-margin);
+        display: table-cell;
+        position: static;
+
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+
+        > a {
+            .lib-css(font-size, @_nav-level0-item-font-size);
+            .lib-css(background, @_nav-level0-item-background-color);
+            .lib-css(border, @_nav-level0-item-border);
+            .lib-css(color, @_nav-level0-item-color);
+            .lib-css(line-height, @_nav-level0-item-line-height);
+            .lib-css(padding, @_nav-level0-item-padding);
+            .lib-css(text-decoration, @_nav-level0-item-text-decoration);
+            .lib-css(text-transform, @_nav-level0-item-text-transform);
+            .lib-css(text-align, @_nav-level0-item-text-align);
+            .lib-css(font-weight, @_nav-level0-item-font-weight);
+            box-sizing: border-box;
+            position: relative;
+            display: block;
+        }
+
+        &:hover {
+            > a {
+                .lib-css(background, @_nav-level0-item-background-color-hover);
+                .lib-css(border, @_nav-level0-item-border-hover);
+                .lib-css(color, @_nav-level0-item-color-hover);
+                .lib-css(text-decoration, @_nav-level0-item-text-decoration-hover);
+            }
+        }
+
+        &.active,
+        &.has-active {
+            > a {
+                .lib-css(background, @_nav-level0-item-background-color-active);
+                .lib-css(border-color, @_nav-level0-item__active__border-color);
+                .lib-css(border-style, @_nav-level0-item__active__border-style);
+                .lib-css(border-width, @_nav-level0-item__active__border-width);
+                .lib-css(color, @_nav-level0-item-color-active);
+                .lib-css(text-decoration, @_nav-level0-item-text-decoration-active);
+            }
+        }
+
+        &:hover {
+            .ui-wrapper {
+                display: block;
+            }
+        }
+
+        &.menu-dropdown-icon {
+            > a {
+                > .megaitemicons {
+                    display: none;
+                }
+            }
+        }
+
+        &.more {
+            position: relative;
+
+            .lib-icon-font(
+                @icon-pointer-down,
+                @_icon-font-size: 26px,
+                @_icon-font-position: after
+            );
+
+            &:before {
+                display: none;
+            }
+
+            &:after {
+                cursor: pointer;
+                padding: 8px 12px;
+                position: relative;
+                z-index: 1;
+            }
+
+            &:hover > .submenu {
+                overflow: visible !important;
+            }
+
+            li {
+                display: block;
+            }
+        }
+    }
+}
+
+._lib-navigation-horizontal-level1__desktop(
+    @_nav-level1-heading-font-size: @navigation-level1-heading_desktop__font-size,
+    @_nav-level1-heading-line-height: @navigation-level1-heading_desktop__line-height,
+    @_nav-level1-heading-padding: @navigation-level1-heading_desktop__padding,
+    @_nav-level1-heading-margin: @navigation-level1-heading_desktop__margin,
+    @_nav-level1-heading-background-color: @navigation-level1-heading_desktop__background,
+    @_nav-level1-heading-border: @navigation-level1-heading_desktop__border,
+    @_nav-level1-heading-color: @navigation-level1-heading_desktop__color,
+    @_nav-level1-heading-font-weight: @navigation-level1-heading_desktop__font-weight,
+    @_nav-level1-heading-text-decoration: @navigation-level1-heading_desktop__text-decoration,
+
+    @_nav-level1-heading__hover__background-color: @navigation-level1-heading_desktop__hover__background,
+    @_nav-level1-heading-border-hover: @navigation-level1-heading_desktop__hover__border,
+    @_nav-level1-heading-color-hover: @navigation-level1-heading_desktop__hover__color,
+    @_nav-level1-heading-text-decoration-hover: @navigation-level1-heading_desktop__hover__text-decoration,
+
+    @_nav-level1-heading-background-color-active: @navigation-level1-heading_desktop__active__background,
+    @_nav-level1-heading__active__border-color: @navigation-level1-heading_desktop__active__border-color,
+    @_nav-level1-heading__active__border-style: @navigation-level1-heading_desktop__active__border-style,
+    @_nav-level1-heading__active__border-width: @navigation-level1-heading_desktop__active__border-width,
+    @_nav-level1-heading-color-active: @navigation-level1-heading_desktop__active__color,
+    @_nav-level1-heading-text-decoration-active: @navigation-level1-heading_desktop__active__text-decoration,
+
+    @_nav-level1-submenu-margin: @navigation-level1-submenu_desktop__margin
+) {
+    li.level1 {
+        h4 {
+            .lib-css(margin, @_nav-level1-heading-margin);
+            padding: 0;
+
+            a {
+                .lib-css(background, @_nav-level1-heading-background-color);
+                .lib-css(border, @_nav-level1-heading-border);
+                .lib-css(color, @_nav-level1-heading-color);
+                .lib-css(font-size, @_nav-level1-heading-font-size);
+                .lib-css(font-weight, @_nav-level1-heading-font-weight);
+                .lib-css(padding, @_nav-level1-heading-padding);
+                .lib-css(text-decoration, @_nav-level1-heading-text-decoration);
+                .lib-css(line-height, @_nav-level1-heading-line-height);
+                display: block;
+                margin: 0;
+
+                &:hover,
+                &.ui-state-focus {
+                    .lib-css(background, @_nav-level1-heading__hover__background-color);
+                    .lib-css(border, @_nav-level1-heading-border-hover);
+                    .lib-css(color, @_nav-level1-heading-color-hover);
+                    .lib-css(text-decoration, @_nav-level1-heading-text-decoration-hover);
+                }
+            }
+        }
+
+        > ul {
+            .lib-css(margin, @_nav-level1-submenu-margin);
+        }
+    }
+}
+
+._lib-navigation-horizontal-level2__desktop(
+    @_nav-level2-font-size: @navigation-level2_desktop__font-size,
+    @_nav-level2-line-height: @navigation-level2_desktop__line-height,
+    @_nav-level2-padding: @navigation-level2_desktop__padding,
+    @_nav-level2-background-color: @navigation-level2_desktop__background,
+    @_nav-level2-border: @navigation-level2_desktop__border,
+    @_nav-level2-color: @navigation-level2_desktop__color,
+    @_nav-level2-text-decoration: @navigation-level2_desktop__text-decoration,
+    @_nav-level2-text-font-weight:  @navigation-level2_desktop__font-weight,
+    @_nav-level2-border-hover: @navigation-level2_desktop__hover__border,
+    @_nav-level2-color-hover: @navigation-level2_desktop__hover__color,
+    @_nav-level2-text-decoration-hover: @navigation-level2_desktop__hover__text-decoration,
+    @_nav-level2-background-color-hover: @navigation-level2_desktop__hover__background,
+    @_nav-level2-background-color-active: @navigation-level2_desktop__active__background,
+    @_nav-level2-border-color-active: @navigation-level2_desktop__active__border-color,
+    @_nav-level2-border-style-active: @navigation-level2_desktop__active__border-style,
+    @_nav-level2-border-width-active: @navigation-level2_desktop__active__border-width,
+    @_nav-level2-color-active: @navigation-level2_desktop__active__color,
+    @_nav-level2-text-decoration-active: @navigation-level2_desktop__active__text-decoration
+) {
+    li.level2 {
+        display: block;
+
+        > a {
+            display: block;
+            .lib-css(line-height, @_nav-level2-line-height);
+            .lib-css(background, @_nav-level2-background-color);
+            .lib-css(border, @_nav-level2-border);
+            .lib-css(color, @_nav-level2-color);
+            .lib-css(padding, @_nav-level2-padding);
+            .lib-css(text-decoration, @_nav-level2-text-decoration);
+            .lib-css(font-weight, @_nav-level2-text-font-weight);
+            .lib-css(font-size, @_nav-level2-font-size);
+
+            &:hover,
+            &.ui-state-focus {
+                .lib-css(background, @_nav-level2-background-color-hover);
+                .lib-css(border, @_nav-level2-border-hover);
+                .lib-css(color, @_nav-level2-color-hover);
+                .lib-css(text-decoration, @_nav-level2-text-decoration-hover);
+            }
+        }
+
+        &.active > a {
+            .lib-css(background, @_nav-level2-background-color-active);
+            .lib-css(border-color, @_nav-level2-border-color-active);
+            .lib-css(border-style, @_nav-level2-border-style-active);
+            .lib-css(border-width, @_nav-level2-border-width-active);
+            .lib-css(color, @_nav-level2-color-active);
+            .lib-css(text-decoration, @_nav-level2-text-decoration-active);
+        }
+    }
+}
+
+._lib-navigation-horizontal-submenu__desktop(
+    @_submenu-wrapper-padding: @submenu-wrapper_desktop__padding,
+    @_submenu-wrapper-position-top: @submenu-wrapper_desktop__position-top,
+    @_submenu-wrapper-background-color: @submenu-wrapper_desktop__background,
+    @_submenu-background-color: @submenu-desktop__background,
+    @_submenu-border-width: @submenu-desktop__border-width,
+    @_submenu-border-style: @submenu-desktop__border-style,
+    @_submenu-border-color: @submenu-desktop__border-color,
+    @_submenu-box-shadow: @submenu-desktop__box-shadow,
+    @_submenu-font-size: @submenu-desktop__font-size,
+    @_submenu-font-weight: @submenu-desktop__font-weight,
+    @_submenu-min-width: @submenu-desktop__min-width,
+    @_submenu-max-width: @submenu-desktop__inner-width,
+    @_submenu-padding: @submenu-desktop__padding,
+    @_submenu-item-padding: @submenu-item-desktop__padding,
+    @_submenu-arrow-content: @submenu-desktop-arrow-content,
+    @_submenu-arrow-display: @submenu-desktop-arrow-display,
+    @_submenu-arrow: @submenu-desktop-arrow,
+    @_submenu-arrow-size: @submenu-desktop-arrow__size,
+    @_submenu-arrow-left: @submenu-desktop-arrow__left
+) {
+    .dropdown {
+        > ul {
+            display: none;
+        }
+    }
+    .ui-wrapper {
+        .lib-css(background, @_submenu-wrapper-background-color);
+        .lib-css(padding, @_submenu-wrapper-padding);
+        .lib-css(top, @_submenu-wrapper-position-top);
+        display: none;
+        left: 0;
+        margin-left: ~"calc(-50vw + 50%)";
+        position: absolute;
+        width: 100vw;
+        z-index: 102;
+    }
+
+    .ui-wrapper > ul {
+        .lib-css(background, @_submenu-background-color);
+        .lib-css(border, @_submenu-border-width @_submenu-border-style @_submenu-border-color);
+        .lib-css(box-shadow, @_submenu-box-shadow);
+        .lib-css(font-size, @_submenu-font-size);
+        .lib-css(font-weight, @_submenu-font-weight);
+        .lib-css(min-width, @_submenu-min-width);
+        .lib-css(max-width, @_submenu-max-width);
+        .lib-css(margin, 0 auto);
+        display: block;
+
+        li {
+            margin-bottom: 0;
+        }
+
+        > li {
+            margin: 0;
+            display: inline-block;
+        }
+    }
+
+    .menu-content > ul {
+        .parent-flex(row, wrap);
+        .lib-css(padding, @_submenu-padding);
+
+        li {
+            .lib-css(padding, @_submenu-item-padding);
+        }
+    }
+
+    .menu-content,
+    .menu-content > ul {
+        width: 100%;
+    }
+}
+
+._lib-navigation-vertical-submenu__desktop(
+    @_vertical-submenu-left-block-max-width: @vertical-submenu-left-block_desktop__max-width,
+    @_vertical-submenu-left-block-width: @vertical-submenu-left-block_desktop__width,
+    @_vertical-submenu-left-block-border: @vertical-submenu-left-block__border,
+    @_vertical-submenu-left-block-padding: @vertical-submenu-left-block__padding,
+
+    @_vertical-submenu-right-block-border: @vertical-submenu-right-block__border,
+    @_vertical-submenu-right-block-padding: @vertical-submenu-right-block__padding,
+
+    @_vertical-submenu-level1-padding: @vertical-submenu-level1_desktop__padding,
+    @_vertical-submenu-level1-font-size: @vertical-submenu-level1_desktop__font-size,
+    @_vertical-submenu-level1-line-height: @vertical-submenu-level1_desktop__line-height,
+    @_vertical-submenu-level1-font-weight: @vertical-submenu-level1_desktop__font-weight,
+    @_vertical-submenu-level1-color: @vertical-submenu-level1_desktop__color,
+    @_vertical-submenu-level1-text-transform: @vertical-submenu-level1_desktop__text-transform,
+    @_vertical-submenu-level1-background: @vertical-submenu-level1_desktop__background,
+    @_vertical-submenu-level1-hover-background: @vertical-submenu-level1_desktop__hover__background,
+    @_vertical-submenu-level1-hover-color: @vertical-submenu-level1_desktop__hover__color,
+    @_vertical-submenu-level1-hover-text-decoration: @vertical-submenu-level1_desktop__hover__text-decoration,
+
+    @_vertical-submenu-level1-arrow-content: @vertical-submenu-level1-desktop-arrow-content,
+    @_vertical-submenu-level1-arrow-font-size: @vertical-submenu-level1-arrow_desktop__font-size,
+    @_vertical-submenu-level1-arrow-font-weight: @vertical-submenu-level1-arrow_desktop__font-weight,
+    @_vertical-submenu-level1-arrow-right: @vertical-submenu-level1-arrow_desktop__position-right,
+    @_vertical-submenu-level1-arrow-top: @vertical-submenu-level1-arrow_desktop__position-top,
+
+
+    @_vertical-submenu-level2-padding: @vertical-submenu-level2_desktop__padding,
+    @_vertical-submenu-level2-font-size: @vertical-submenu-level2_desktop__font-size,
+    @_vertical-submenu-level2-line-height: @vertical-submenu-level2_desktop__line-height,
+    @_vertical-submenu-level2-font-weight: @vertical-submenu-level2_desktop__font-weight,
+    @_vertical-submenu-level2-color: @vertical-submenu-level2_desktop__color,
+    @_vertical-submenu-level2-text-transform: @vertical-submenu-level2_desktop__text-transform,
+    @_vertical-submenu-level2-background: @vertical-submenu-level2_desktop__background,
+    @_vertical-submenu-level2-hover-background: @vertical-submenu-level2_desktop__hover__background,
+    @_vertical-submenu-level2-hover-color: @vertical-submenu-level2_desktop__hover__color,
+    @_vertical-submenu-level2-hover-text-decoration: @vertical-submenu-level2_desktop__hover__text-decoration
+) {
+    .menu-vertical-wrapper {
+        .menu-content {
+            .parent-flex(row, nowrap);
+        }
+
+        .vertical-menu-left {
+            width: @_vertical-submenu-left-block-width;
+            max-width: @_vertical-submenu-left-block-max-width;
+            border-right: @_vertical-submenu-left-block-border;
+            padding: @_vertical-submenu-left-block-padding;
+        }
+
+        .vertical-menu-content {
+            flex: 1;
+            padding: @_vertical-submenu-right-block-padding;
+        }
+
+        .vertical-subcate-content {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        li.level1 {
+            a {
+                .lib-icon-font(
+                    @_vertical-submenu-level1-arrow-content,
+                    @_icon-font-color: inherit,
+                    @_icon-font-size: @_vertical-submenu-level1-arrow-font-size,
+                    @_icon-font-position: after
+                );
+                .lib-font-size(@_vertical-submenu-level1-font-size);
+                .lib-css(line-height, @_vertical-submenu-level1-line-height);
+                .lib-css(padding, @_vertical-submenu-level1-padding);
+                .lib-css(font-weight, @_vertical-submenu-level1-font-weight);
+                .lib-css(color, @_vertical-submenu-level1-color);
+                .lib-css(text-transform, @_vertical-submenu-level1-text-transform);
+                .lib-css(background, @_vertical-submenu-level1-background);
+                position: relative;
+                display: block;
+
+                &:after {
+                    position: absolute;
+                    right: @vertical-submenu-level1-arrow_desktop__position-right;
+                    top: @vertical-submenu-level1-arrow_desktop__position-top;
+                    font-weight: @_vertical-submenu-level1-arrow-font-weight;
+                }
+            }
+
+            &.active {
+                a {
+                    .lib-css(color, @_vertical-submenu-level1-hover-color);
+                    .lib-css(background, @_vertical-submenu-level1-hover-background);
+                    .lib-css(text-decoration, @_vertical-submenu-level1-hover-text-decoration);
+                    background: @primary__color;
+                    color: @color-white;
+
+                    &:after {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+
+        li.level2 {
+            a {
+                .lib-css(padding, @_vertical-submenu-level2-padding);
+                .lib-font-size(@_vertical-submenu-level2-font-size);
+                .lib-css(font-weight, @_vertical-submenu-level2-font-weight);
+                .lib-css(color, @_vertical-submenu-level2-color);
+                .lib-css(text-transform, @_vertical-submenu-level2-text-transform);
+                .lib-css(background, @_vertical-submenu-level2-background);
+                .lib-css(line-height, @_vertical-submenu-level2-line-height);
+
+                &:hover,
+                &:active {
+                    .lib-css(color, @_vertical-submenu-level2-hover-color);
+                    .lib-css(text-decoration, @_vertical-submenu-level2-hover-text-decoration);
+                    .lib-css(background, @_vertical-submenu-level2-hover-background);
+                }
+            }
+
+            &.active {
+                a {
+                    .lib-css(color, @_vertical-submenu-level2-hover-color);
+                    .lib-css(text-decoration, @_vertical-submenu-level2-hover-text-decoration);
+                    .lib-css(background, @_vertical-submenu-level2-hover-background);
+                }
+            }
+        }
+    }
+}
+
+.lib-magedelight-navigation-horizontal__desktop(
+    @_nav-background-color: @navigation-desktop__background,
+    @_nav-border: @navigation-desktop__border,
+    @_nav-padding: @navigation-desktop__padding,
+    @_nav-inner-width: @navigation-desktop__inner-width,
+    @_nav-inner-padding: @navigation-desktop__inner-padding,
+    @_nav-is-flex: @navigation-desktop_is-flex,
+    @_nav__flex-direction: @navigation-desktop_flex-direction,
+    @_nav__flex-justify-content: @navigation-desktop_justify-content,
+    @_nav__flex-justify-content-ie: @navigation-desktop_justify-content-ie
+) {
+    .horizontal-menu {
+        display: block;
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            list-style: none;
+            position: relative;
+        }
+
+        .menu {
+            .lib-css(background, @_nav-background-color);
+            .lib-css(border, @_nav-border);
+            .lib-css(padding, @_nav-padding);
+            height: inherit;
+            left: auto;
+            overflow: inherit;
+            position: relative;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+
+            > ul {
+                width: 100%;
+                max-width: @_nav-inner-width;
+                padding: @_nav-inner-padding;
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+
+                & when (@_nav-is-flex = true) {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-prefix-flex-direction(@navigation-desktop_flex-direction);
+                    .lib-vendor-prefix-justify(@navigation-desktop_justify-content, @navigation-desktop_justify-content-ie);
+                }
+
+                & when not (@_nav-is-flex = true) {
+                    display: table;
+                }
+            }
+        }
+
+        ._lib-navigation-horizontal-submenu__desktop();
+        ._lib-navigation-horizontal-level0__desktop();
+        ._lib-navigation-horizontal-level1__desktop();
+        ._lib-navigation-horizontal-level2__desktop();
+
+        // Vertical Navigation mixin can be removed if not used (ToDo add conditional);
+        ._lib-navigation-vertical-submenu__desktop();
+
+
+        .column1 {
+            .menu-content {
+                width: 100%
+            }
+        }
+
+
+        .cols7 {
+            .menu-content > ul {
+                > li {
+                    width: 100%/7;
+                }
+            }
+        }
+
+        .cols6 {
+            .menu-content > ul {
+                > li {
+                    width: 100%/6;
+                }
+            }
+        }
+
+        .cols5 {
+            .menu-content > ul {
+                > li {
+                    width: 100%/5;
+                }
+            }
+        }
+
+        .cols4 {
+            .menu-content > ul {
+                > li {
+                    width: 100%/4;
+                }
+            }
+        }
+
+        .cols3 {
+            .menu-content > ul {
+                > li {
+                    width: 100%/3;
+                }
+            }
+        }
+
+        .cols2 {
+            .menu-content > ul {
+                > li {
+                    width: 100%/2;
+                }
+            }
+        }
+    }
+}
+
+// Native magento navigation do not use with megamenu
+.lib-main-navigation-desktop__full-width(
+    @_nav-background-color: @navigation-desktop__background,
+    @_nav-border: @navigation-desktop__border,
+    @_nav-padding: @navigation-desktop__padding,
+    @_nav-font-size: @navigation-desktop__font-size,
+    @_nav-font-weight: @navigation-desktop__font-weight,
+    @_nav-inner-width: @navigation-desktop__inner-width,
+    @_nav-inner-padding: @navigation-desktop__inner-padding,
+    @_nav-level0-item-line-height: @navigation-desktop-level0-item__line-height,
+    @_nav-level0-item-margin: @navigation-desktop-level0-item__margin,
+    @_nav-level0-item-padding: @navigation-desktop-level0-item__padding,
+    @_nav-level0-item-text-align: @navigation-desktop-level0-item__align,
+    @_nav-level0-item-background-color: @navigation-desktop-level0-item__background,
+    @_nav-level0-item-border: @navigation-desktop-level0-item__border,
+    @_nav-level0-item-color: @navigation-desktop-level0-item__color,
+    @_nav-level0-item-text-decoration: @navigation-desktop-level0-item__text-decoration,
+    @_nav-level0-item-text-transform: @navigation-desktop-level0-item__text-transform,
+
+    @_nav-level0-item-background-color-hover: @navigation-desktop-level0-item__hover__background,
+    @_nav-level0-item-border-hover: @navigation-desktop-level0-item__hover__border,
+    @_nav-level0-item-color-hover: @navigation-desktop-level0-item__hover__color,
+    @_nav-level0-item-text-decoration-hover: @navigation-desktop-level0-item__hover__text-decoration,
+
+    @_nav-level0-item-background-color-active: @navigation-desktop-level0-item__active__background,
+    @_nav-level0-item__active__border-color: @navigation-desktop-level0-item__active__border-color,
+    @_nav-level0-item__active__border-style: @navigation-desktop-level0-item__active__border-style,
+    @_nav-level0-item__active__border-width: @navigation-desktop-level0-item__active__border-width,
+    @_nav-level0-item-color-active: @navigation-desktop-level0-item__active__color,
+    @_nav-level0-item-text-decoration-active: @navigation-desktop-level0-item__active__text-decoration,
+
+    @_submenu-background-color: @submenu-desktop__background,
+    @_submenu-border-width: @submenu-desktop__border-width,
+    @_submenu-border-style: @submenu-desktop__border-style,
+    @_submenu-border-color: @submenu-desktop__border-color,
+    @_submenu-box-shadow: @submenu-desktop__box-shadow,
+    @_submenu-font-size: @submenu-desktop__font-size,
+    @_submenu-font-weight: @submenu-desktop__font-weight,
+    @_submenu-min-width: @submenu-desktop__min-width,
+    @_submenu-padding: @submenu-desktop__padding,
+    @_submenu-position__top: @submenu-desktop__position-top,
+
+    @_submenu-arrow-content: @submenu-desktop-arrow-content,
+    @_submenu-arrow-display: @submenu-desktop-arrow-display,
+    @_submenu-arrow: @submenu-desktop-arrow,
+    @_submenu-arrow-size: @submenu-desktop-arrow__size,
+    @_submenu-arrow-left: @submenu-desktop-arrow__left,
+
+    @_submenu-heading-font-size: @submenu-desktop-heading__font-size,
+    @_submenu-heading-padding: @submenu-desktop-heading__padding,
+    @_submenu-heading-background-color: @submenu-desktop-heading__background,
+    @_submenu-heading-border: @submenu-desktop-heading__border,
+    @_submenu-heading-color: @submenu-desktop-heading__color,
+    @_submenu-heading-font-weight: @submenu-desktop-heading__font-weight,
+    @_submenu-heading-text-decoration: @submenu-desktop-heading__text-decoration,
+
+    @_submenu-heading__hover__background-color: @submenu-desktop-heading__hover__background,
+    @_submenu-heading-border-hover: @submenu-desktop-heading__hover__border,
+    @_submenu-heading-color-hover: @submenu-desktop-heading__hover__color,
+    @_submenu-heading-text-decoration-hover: @submenu-desktop-heading__hover__text-decoration,
+
+    @_submenu-heading-background-color-active: @submenu-desktop-heading__active__background,
+    @_submenu-heading__active__border-color: @submenu-desktop-heading__active__border-color,
+    @_submenu-heading__active__border-style: @submenu-desktop-heading__active__border-style,
+    @_submenu-heading__active__border-width: @submenu-desktop-heading__active__border-width,
+    @_submenu-heading-color-active: @submenu-desktop-heading__active__color,
+    @_submenu-heading-text-decoration-active: @submenu-desktop-heading__active__text-decoration,
+
+    @_submenu-item-font-size: @submenu-desktop-item__font-size,
+    @_submenu-item-padding: @submenu-desktop-item__padding,
+    @_submenu-item-background-color: @submenu-desktop-item__background,
+    @_submenu-item-border: @submenu-desktop-item__border,
+    @_submenu-item-color: @submenu-desktop-item__color,
+    @_submenu-item-text-decoration: @submenu-desktop-item__text-decoration,
+    @_submenu-item-text-font-weight:  @submenu-desktop-item__text-font-weight,
+
+    @_submenu-item__hover__background-color: @submenu-desktop-item__hover__background,
+    @_submenu-item-border-hover: @submenu-desktop-item__hover__border,
+    @_submenu-item-color-hover: @submenu-desktop-item__hover__color,
+    @_submenu-item-text-decoration-hover: @submenu-desktop-item__hover__text-decoration,
+
+    @_submenu-item-background-color-active: @submenu-desktop-item__active__background,
+    @_submenu-item__active__border-color: @submenu-desktop-item__active__border-color,
+    @_submenu-item__active__border-style: @submenu-desktop-item__active__border-style,
+    @_submenu-item__active__border-width: @submenu-desktop-item__active__border-width,
+    @_submenu-item-color-active: @submenu-desktop-item__active__color,
+    @_submenu-item-text-decoration-active: @submenu-desktop-item__active__text-decoration
+) {
+
+    .navigation {
+        .lib-css(background, @_nav-background-color);
+        .lib-css(border, @_nav-border);
+        .lib-css(font-size, @_nav-font-size);
+        .lib-css(font-weight, @_nav-font-weight);
+        .lib-css(padding, @_nav-padding);
+        height: inherit;
+        left: auto;
+        overflow: inherit;
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+
+        &:empty {
+            display: none;
+        }
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        > ul {
+            width: 100%;
+            max-width: @_nav-inner-width;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        li.level0 {
+            .lib-css(border-top, none);
+            display: table-cell;
+        }
+
+        li.level1 {
+            position: relative;
+        }
+
+        .level0 {
+            .lib-css(margin, @_nav-level0-item-margin);
+            display: inline-block;
+            position: static;
+
+            &:last-child {
+                margin-right: 0;
+                padding-right: 0;
+            }
+
+
+            > .level-top {
+                .lib-css(background, @_nav-level0-item-background-color);
+                .lib-css(border, @_nav-level0-item-border);
+                .lib-css(color, @_nav-level0-item-color);
+                .lib-css(line-height, @_nav-level0-item-line-height);
+                .lib-css(padding, @_nav-level0-item-padding);
+                .lib-css(text-decoration, @_nav-level0-item-text-decoration);
+                .lib-css(text-transform, @_nav-level0-item-text-transform);
+                .lib-css(text-align, @_nav-level0-item-text-align);
+                box-sizing: border-box;
+                position: relative;
+                display: block;
+
+                &:hover, &.ui-state-focus {
+                    .lib-css(background, @_nav-level0-item-background-color-hover);
+                    .lib-css(border, @_nav-level0-item-border-hover);
+                    .lib-css(color, @_nav-level0-item-color-hover);
+                    .lib-css(text-decoration, @_nav-level0-item-text-decoration-hover);
+                }
+            }
+
+            &.active,
+            &.has-active {
+                > .level-top {
+                    .lib-css(background, @_nav-level0-item-background-color-active);
+                    .lib-css(border-color, @_nav-level0-item__active__border-color);
+                    .lib-css(border-style, @_nav-level0-item__active__border-style);
+                    .lib-css(border-width, @_nav-level0-item__active__border-width);
+                    .lib-css(color, @_nav-level0-item-color-active);
+                    .lib-css(text-decoration, @_nav-level0-item-text-decoration-active);
+                }
+            }
+
+            &.parent:hover > .submenu {
+                overflow: visible !important;
+            }
+
+            &.parent {
+                > .level-top {
+                    > .ui-menu-icon {
+                        display: @_submenu-arrow-display;
+                    }
+                }
+            }
+
+            .ui-wrapper {
+                .lib-css(background, @_submenu-background-color);
+                width: 100vw;
+                margin-left: ~"calc(-50vw + 50%)";
+                position: absolute;
+                left: 0;
+                z-index: 102;
+                .lib-css(top, @_submenu-position__top);
+                .lib-css(padding, @_nav-inner-padding);
+            }
+
+            &.submenu {
+                .lib-css(background, @_submenu-background-color);
+                .lib-css(border, @_submenu-border-width @_submenu-border-style @_submenu-border-color);
+                .lib-css(box-shadow, @_submenu-box-shadow);
+                .lib-css(font-size, @_submenu-font-size);
+                .lib-css(font-weight, @_submenu-font-weight);
+                .lib-css(min-width, @_submenu-min-width);
+                .lib-css(max-width, @_nav-inner-width);
+                .lib-css(padding, @_submenu-padding);
+                .lib-css(margin, 0 auto);
+                display: none;
+
+                li {
+                    margin-bottom: 0;
+
+                }
+
+                > li {
+                    margin: 0;
+                    display: inline-block;
+
+                    > a {
+                        display: block;
+                        line-height: inherit;
+                        .lib-css(background, @_submenu-heading-background-color);
+                        .lib-css(border, @_submenu-heading-border);
+                        .lib-css(color, @_submenu-heading-color);
+                        .lib-css(padding, @_submenu-heading-padding);
+                        .lib-css(text-decoration, @_submenu-heading-text-decoration);
+                        .lib-css(font-weight, @_submenu-heading-font-weight);
+                        .lib-css(font-size, @_submenu-heading-font-size);
+
+                        &:hover,
+                        &.ui-state-focus {
+                            .lib-css(background, @_submenu-heading__hover__background-color);
+                            .lib-css(border, @_submenu-heading-border-hover);
+                            .lib-css(color, @_submenu-heading-color-hover);
+                            .lib-css(text-decoration, @_submenu-heading-text-decoration-hover);
+                        }
+                    }
+
+                    ul {
+                        display: block !important;
+
+                        li {
+                            display: block;
+
+                            a {
+                                display: block;
+                                line-height: inherit;
+                                .lib-css(background, @_submenu-item-background-color);
+                                .lib-css(border, @_submenu-item-border);
+                                .lib-css(color, @_submenu-item-color);
+                                .lib-css(padding, @_submenu-item-padding);
+                                .lib-css(text-decoration, @_submenu-item-text-decoration);
+                                .lib-css(font-weight, @_submenu-item-text-font-weight);
+                                .lib-css(font-size, @_submenu-item-font-size);
+
+                                &:hover,
+                                &.ui-state-focus {
+                                    .lib-css(background, @_submenu-item__hover__background-color);
+                                    .lib-css(border, @_submenu-item-border-hover);
+                                    .lib-css(color, @_submenu-item-color-hover);
+                                    .lib-css(text-decoration, @_submenu-item-text-decoration-hover);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .active > a {
+                    .lib-css(background, @_submenu-item-background-color-active);
+                    .lib-css(border-color, @_submenu-item__active__border-color);
+                    .lib-css(border-style, @_submenu-item__active__border-style);
+                    .lib-css(border-width, @_submenu-item__active__border-width);
+                    .lib-css(color, @_submenu-item-color-active);
+                    .lib-css(text-decoration, @_submenu-item-text-decoration-active);
+                }
+            }
+
+            .ui-wrapper {
+                .level0.submenu {
+                    display: flex !important;
+                    .parent-flex(row, wrap);
+                }
+            }
+
+            &.more {
+                position: relative;
+                .lib-icon-font(
+                    @icon-pointer-down,
+                    @_icon-font-size: 26px,
+                    @_icon-font-position: after
+                );
+
+                &:before {
+                    display: none;
+                }
+
+                &:after {
+                    cursor: pointer;
+                    padding: 8px 12px;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &:hover > .submenu {
+                    overflow: visible !important;
+                }
+
+                li {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.lib-main-navigation__mobile(
+    @_nav-background-color: @navigation-mobile__background,
+    @_nav-border: @navigation-mobile__border,
+    @_nav-height: @navigation-mobile__height,
+
+    @_nav-level0-font-size: @mobile-level0-item__font-size,
+    @_nav-level0-font-weight: @mobile-level0-item__font-weight,
+    @_nav-level0-item-line-height: @mobile-level0-item__line-height,
+    @_nav-level0-item-margin: @mobile-level0-item__margin,
+    @_nav-level0-item-padding: @mobile-level0-item__padding,
+    @_nav-level0-text-transform: @mobile-level0-item__text-transform,
+    @_nav-level0-item-background-color: @mobile-level0-item__background,
+    @_nav-level0-item-border: @mobile-level0-item__border,
+    @_nav-level0-item-color: @mobile-level0-item__color,
+    @_nav-level0-item-text-decoration: @mobile-level0-item__text-decoration,
+
+    @_nav-level0-item-background-color-active: @mobile-level0-item__active__background,
+    @_nav-level0-item__active__border-color: @mobile-level0-item__active__border-color,
+    @_nav-level0-item__active__border-style: @mobile-level0-item__active__border-style,
+    @_nav-level0-item__active__border-width: @mobile-level0-item__active__border-width,
+    @_nav-level0-item-color-active: @mobile-level0-item__active__color,
+    @_nav-level0-item-text-decoration-active: @mobile-level0-item__active__text-decoration,
+
+    @_submenu-background-color: @mobile-submenu__background,
+    @_submenu-border: @mobile-submenu__border,
+
+    @_submenu-item-font-size: @mobile-level1-item__font-size,
+    @_submenu-item-font-weight: @mobile-level1-item__font-weight,
+    @_submenu-item-line-height: @mobile-level1-item__line-height,
+    @_submenu-item-padding: @mobile-level1-item__padding,
+    @_submenu-item-background-color: @mobile-level1-item__background,
+    @_submenu-item-border: @mobile-level1-item__border,
+    @_submenu-item-color: @mobile-level1-item__color,
+    @_submenu-item-text-decoration: @mobile-level1-item__text-decoration,
+    @_submenu-item-text-transform: @mobile-level1-item__text-transform,
+    @_submenu-item-background-color-active: @mobile-level1-item__active__background,
+    @_submenu-item__active__border: @mobile-level1-item__active__border,
+    @_submenu-item__active__border-color: @mobile-level1-item__active__border-color,
+    @_submenu-item__active__border-style: @mobile-level1-item__active__border-style,
+    @_submenu-item__active__border-width: @mobile-level1-item__active__border-width,
+    @_submenu-item-color-active: @mobile-level1-item__active__color,
+    @_submenu-item-text-decoration-active: @mobile-level1-item__active__text-decoration,
+
+    @_level2-item-font-size: @mobile-level2-item__font-size,
+    @_level2-item-font-weight: @mobile-level2-item__font-weight,
+    @_level2-item-line-height: @mobile-level2-item__line-height,
+    @_level2-item-padding: @mobile-level2-item__padding,
+    @_level2-item-background-color: @mobile-level2-item__background,
+    @_level2-item-border: @mobile-level2-item__border,
+    @_level2-item-color: @mobile-level2-item__color,
+    @_level2-item-text-decoration: @mobile-level2-item__text-decoration,
+    @_level2-item-text-transform: @mobile-level2-item__text-transform,
+    @_level2-item-background-color-active: @mobile-level2-item__active__background,
+    @_level2-item__active__border: @mobile-level2-item__active__border,
+    @_level2-item__active__border-color: @mobile-level2-item__active__border-color,
+    @_level2-item__active__border-style: @mobile-level2-item__active__border-style,
+    @_level2-item__active__border-width: @mobile-level2-item__active__border-width,
+    @_level2-item-color-active: @mobile-level2-item__active__color,
+    @_level2-item-text-decoration-active: @mobile-level2-item__active__text-decoration,
+
+    @_nav-item-icon-color: @mobile-item-icon__color,
+    @_nav-item-icon-font-size: @mobile-item-icon__font-size,
+    @_nav-item-icon-font-weight: @mobile-item-icon__font-weight,
+
+    @_nav-back-link-color: @mobile-back-link__color,
+    @_nav-back-link-font-size: @mobile-back-link__font-size,
+    @_nav-back-link-text-transform: @mobile-back-link__text-transform,
+    @_nav-back-link-text-background: @mobile-back-link__background,
+    @_nav-back-link-text-padding: @mobile-back-link__padding
+) {
+    .navigation {
+        .lib-css(background, @_nav-background-color);
+        .lib-css(border, @_nav-border);
+        box-sizing: border-box;
+        height: @_nav-height;
+
+        > ul {
+            height: @_nav-height;
+            overflow-x: scroll;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            &.child-open {
+                overflow: hidden;
+                height: 100%;
+            }
+        }
+
+        li {
+            margin: 0;
+            > ul {
+                display: none;
+            }
+        }
+
+        a {
+            display: block;
+            .lib-css(padding, @_submenu-item-padding);
+        }
+
+
+        li.level0 {
+            .lib-css(border-top, @_nav-level0-item-border);
+
+
+            > a {
+                .lib-font-size(@_nav-level0-font-size);
+                .lib-css(background, @_nav-level0-item-background-color);
+                .lib-css(font-weight, @_nav-level0-font-weight);
+                .lib-css(line-height, @_nav-level0-item-line-height);
+                .lib-css(padding, @_nav-level0-item-padding);
+                .lib-css(text-transform, @_nav-level0-text-transform);
+                word-wrap: break-word;
+                position: relative;
+                z-index: 99;
+            }
+
+            .ui-menu-icon {
+                position: absolute;
+                right: 0;
+                width: 30px;
+                top: 0;
+                z-index: 100;
+                .lib-icon-font(
+                    @_icon-font-content: @icon-chevron-right,
+                    @_icon-font-size: @_nav-item-icon-font-size,
+                    @_icon-font-margin: 0,
+                    @_icon-font-color: @_nav-item-icon-color,
+                    @_icon-font-line-height: 59px
+                );
+
+                &:before {
+                    font-weight: @_nav-item-icon-font-weight;
+                }
+            }
+
+            &:first-child {
+                border-top: 0;
+            }
+        }
+
+        .submenu {
+            background: @color-white;
+            bottom: 0;
+            display: block !important;
+            left: 100% !important;
+            position: absolute;
+            right: 0;
+            top: 61px !important;
+            z-index: -1;
+            transition: transform .25s cubic-bezier(.36, 1.03, .28, 1.06);
+            transform: translateX(100%);
+            height: @_nav-height;
+            width: 100%;
+
+            li {
+                word-wrap: break-word;
+                .lib-css(border-top, @_submenu-item-border);
+
+                > span,
+                a {
+                    .lib-css(background, @_submenu-item-background-color);
+                    .lib-css(color, @_submenu-item-color);
+                    .lib-css(padding, @_submenu-item-padding);
+                    .lib-css(font-weight, @_submenu-item-font-weight);
+                    .lib-css(line-height, @_submenu-item-line-height);
+                    .lib-css(text-decoration, @_submenu-item-text-decoration);
+                    .lib-css(text-transform, @_submenu-item-text-transform);
+                    display: block;
+                    word-wrap: break-word;
+                    position: relative;
+                    z-index: 99;
+                }
+
+                &:first-child {
+                    border-top: 0;
+                }
+
+                &.back-link {
+                    .menu-back-link {
+                        .lib-icon-font(
+                            @_icon-font-content: @icon-chevron-left,
+                            @_icon-font-size: @_nav-item-icon-font-size,
+                            @_icon-font-color: @_nav-item-icon-color,
+                            @_icon-font-margin: 0 10px 0 0,
+                            @_icon-font-line-height: inherit
+                        );
+
+                        .lib-css(border-top, none);
+                        .lib-css(color, @_nav-back-link-color);
+                        .lib-css(padding, @_nav-back-link-text-padding);
+                        .lib-css(text-transform, @_nav-back-link-text-transform);
+                        .lib-font-size(@_nav-back-link-font-size);
+                        .lib-css(background, @_nav-back-link-text-background);
+                        display: block;
+
+                        &:before {
+                            font-weight: @_nav-item-icon-font-weight;
+                            vertical-align: top;
+                        }
+                    }
+                }
+
+                &.category-name {
+                    display: none;
+                }
+            }
+
+            &:not(:first-child) {
+                overflow-x: hidden;
+                position: absolute;
+                transition: transform .25s cubic-bezier(.36, 1.03, .28, 1.06);
+
+                &.expanded {
+                    top: 0 !important;
+                }
+            }
+
+            &.active {
+                transform: translateX(-100%);
+                transition: transform .25s cubic-bezier(.36, 1.03, .28, 1.06);
+                z-index: 999;
+            }
+        }
+
+        li.level2,
+        li.level2 ul li {
+            a {
+                .lib-css(background, @_level2-item-background-color);
+                .lib-css(color, @_level2-item-color);
+                .lib-css(padding, @_level2-item-padding);
+                .lib-css(font-weight, @_level2-item-font-weight);
+                .lib-css(line-height, @_level2-item-line-height);
+                .lib-css(text-decoration, @_level2-item-text-decoration);
+                .lib-css(text-transform, @_level2-item-text-transform);
+                display: block;
+                word-wrap: break-word;
+                position: relative;
+                z-index: 99;
+            }
+        }
+    }
+}
+
+.lib-magedelight-navigation-horizontal__mobile(
+    @_nav-background-color: @navigation-mobile__background,
+    @_nav-border: @navigation-mobile__border,
+    @_nav-height: @navigation-mobile__height,
+
+    @_nav-level0-font-size: @mobile-level0-item__font-size,
+    @_nav-level0-font-weight: @mobile-level0-item__font-weight,
+    @_nav-level0-item-line-height: @mobile-level0-item__line-height,
+    @_nav-level0-item-margin: @mobile-level0-item__margin,
+    @_nav-level0-item-padding: @mobile-level0-item__padding,
+    @_nav-level0-text-transform: @mobile-level0-item__text-transform,
+    @_nav-level0-item-background-color: @mobile-level0-item__background,
+    @_nav-level0-item-border: @mobile-level0-item__border,
+    @_nav-level0-item-color: @mobile-level0-item__color,
+    @_nav-level0-item-text-decoration: @mobile-level0-item__text-decoration,
+
+    @_nav-level0-item-background-color-active: @mobile-level0-item__active__background,
+    @_nav-level0-item__active__border-color: @mobile-level0-item__active__border-color,
+    @_nav-level0-item__active__border-style: @mobile-level0-item__active__border-style,
+    @_nav-level0-item__active__border-width: @mobile-level0-item__active__border-width,
+    @_nav-level0-item-color-active: @mobile-level0-item__active__color,
+    @_nav-level0-item-text-decoration-active: @mobile-level0-item__active__text-decoration,
+
+    @_submenu-background-color: @mobile-submenu__background,
+    @_submenu-border: @mobile-submenu__border,
+
+    @_submenu-item-font-size: @mobile-level1-item__font-size,
+    @_submenu-item-font-weight: @mobile-level1-item__font-weight,
+    @_submenu-item-line-height: @mobile-level1-item__line-height,
+    @_submenu-item-padding: @mobile-level1-item__padding,
+    @_submenu-item-background-color: @mobile-level1-item__background,
+    @_submenu-item-border: @mobile-level1-item__border,
+    @_submenu-item-color: @mobile-level1-item__color,
+    @_submenu-item-text-decoration: @mobile-level1-item__text-decoration,
+    @_submenu-item-text-transform: @mobile-level1-item__text-transform,
+    @_submenu-item-background-color-active: @mobile-level1-item__active__background,
+    @_submenu-item__active__border: @mobile-level1-item__active__border,
+    @_submenu-item__active__border-color: @mobile-level1-item__active__border-color,
+    @_submenu-item__active__border-style: @mobile-level1-item__active__border-style,
+    @_submenu-item__active__border-width: @mobile-level1-item__active__border-width,
+    @_submenu-item-color-active: @mobile-level1-item__active__color,
+    @_submenu-item-text-decoration-active: @mobile-level1-item__active__text-decoration,
+
+    @_level2-item-font-size: @mobile-level2-item__font-size,
+    @_level2-item-font-weight: @mobile-level2-item__font-weight,
+    @_level2-item-line-height: @mobile-level2-item__line-height,
+    @_level2-item-padding: @mobile-level2-item__padding,
+    @_level2-item-background-color: @mobile-level2-item__background,
+    @_level2-item-border: @mobile-level2-item__border,
+    @_level2-item-color: @mobile-level2-item__color,
+    @_level2-item-text-decoration: @mobile-level2-item__text-decoration,
+    @_level2-item-text-transform: @mobile-level2-item__text-transform,
+    @_level2-item-background-color-active: @mobile-level2-item__active__background,
+    @_level2-item__active__border: @mobile-level2-item__active__border,
+    @_level2-item__active__border-color: @mobile-level2-item__active__border-color,
+    @_level2-item__active__border-style: @mobile-level2-item__active__border-style,
+    @_level2-item__active__border-width: @mobile-level2-item__active__border-width,
+    @_level2-item-color-active: @mobile-level2-item__active__color,
+    @_level2-item-text-decoration-active: @mobile-level2-item__active__text-decoration,
+
+
+    @_nav-item-icon-color: @mobile-item-icon__color,
+    @_nav-item-icon-font-size: @mobile-item-icon__font-size,
+    @_nav-item-icon-font-weight: @mobile-item-icon__font-weight,
+
+    @_nav-back-link-color: @mobile-back-link__color,
+    @_nav-back-link-font-size: @mobile-back-link__font-size,
+    @_nav-back-link-text-transform: @mobile-back-link__text-transform,
+    @_nav-back-link-text-background: @mobile-back-link__background,
+    @_nav-back-link-text-padding: @mobile-back-link__padding
+) {
+    .horizontal-menu {
+        .lib-css(background, @_nav-background-color);
+
+        .menu {
+            .lib-css(border, @_nav-border);
+            box-sizing: border-box;
+            height: @_nav-height;
+            position: relative;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            padding-bottom: 115px;
+
+            > ul {
+                > li {
+                    position: relative;
+
+                }
+                &:first-child {
+                    > li {
+                        > ul {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .megaStaticBlock {
+                > ul {
+                    &:not(.submenu) {
+                        padding: 0px 20px;
+                        li {
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            &.visibleChild {
+                overflow: hidden !important;
+                height: 100% !important;
+
+                > .menu-sidebar-right,
+                > .menu-sidebar-left  {
+                    display: none;
+                }
+            }
+            &.submenu {
+                li.has-submenu {
+                    .submenu {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            .lib-css(padding, @_submenu-item-padding);
+        }
+
+        .back-link {
+            border-top: 0;
+
+            .menu-back-link {
+                .lib-css(border-top, none);
+                .lib-css(color, @_nav-back-link-color);
+                .lib-css(padding, @_nav-back-link-text-padding);
+                .lib-css(text-transform, @_nav-back-link-text-transform);
+                .lib-font-size(@_nav-back-link-font-size);
+                .lib-css(background, @_nav-back-link-text-background);
+                display: block;
+
+                .lib-icon-font(
+                    @_icon-font-content: @icon-chevron-left,
+                    @_icon-font-size: @_nav-item-icon-font-size,
+                    @_icon-font-color: @_nav-item-icon-color,
+                    @_icon-font-margin: 0 10px 0 0,
+                    @_icon-font-line-height: inherit
+                );
+
+                &:before {
+                    font-weight: @_nav-item-icon-font-weight;
+                    vertical-align: top;
+                }
+            }
+        }
+
+        .megaitemicons {
+            position: absolute;
+            right: 0;
+            width: 50px;
+            text-align: center;
+            top: 0;
+            z-index: 100;
+            .lib-icon-font(
+                @_icon-font-content: @icon-chevron-right,
+                @_icon-font-size: @_nav-item-icon-font-size,
+                @_icon-font-margin: 0,
+                @_icon-font-color: @_nav-item-icon-color,
+                @_icon-font-line-height: 59px
+            );
+
+            &:before {
+                font-weight: @_nav-item-icon-font-weight;
+            }
+        }
+
+        li.level0 {
+            .lib-css(border-top, @_nav-level0-item-border);
+
+            > a {
+                .lib-font-size(@_nav-level0-font-size);
+                .lib-css(background, @_nav-level0-item-background-color);
+                .lib-css(font-weight, @_nav-level0-font-weight);
+                .lib-css(line-height, @_nav-level0-item-line-height);
+                .lib-css(padding, @_nav-level0-item-padding);
+                .lib-css(text-transform, @_nav-level0-text-transform);
+                .lib-css(text-decoration, @_nav-level0-item-text-decoration);
+                word-wrap: break-word;
+                position: relative;
+                z-index: 99;
+            }
+
+            &:first-child {
+                border-top: 0;
+            }
+            > ul {
+                display: none;
+            }
+        }
+        .menu {
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            > ul.menu-vertical-child,
+            > ul.animated,
+            > ul.level2,
+            > ul.level3,
+            > ul.level4 {
+                background: @color-white;
+                bottom: 0;
+                display: block !important;
+                left: 100% !important;
+                right: 0;
+                top: 60px;
+                z-index: -1;
+                transform: translate3d(100%,0,0);;
+                -webkit-transform: translate3d(100%,0,0);
+                transition: transform .5s;
+                height: 0;
+                width: 100%;
+                padding-bottom: 115px;
+                position: absolute;
+                visibility: hidden;
+                overflow-y: scroll;
+                overflow-x: hidden;
+
+                li {
+                    word-wrap: break-word;
+                    .lib-css(border-top, @_submenu-item-border);
+                    &.back-link ,
+                    &.megaStaticBlock{
+                        border-top: 0;
+                    }
+                    h4 {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    > span,
+                    a {
+                        .lib-font-size(@_submenu-item-font-size);
+                        .lib-css(background, @_submenu-item-background-color);
+                        .lib-css(color, @_submenu-item-color);
+                        .lib-css(padding, @_submenu-item-padding);
+                        .lib-css(font-weight, @_submenu-item-font-weight);
+                        .lib-css(line-height, @_submenu-item-line-height);
+                        .lib-css(text-decoration, @_submenu-item-text-decoration);
+                        .lib-css(text-transform, @_submenu-item-text-transform);
+                        display: block;
+                        word-wrap: break-word;
+                        position: relative;
+                        z-index: 99;
+                    }
+
+                    &:first-child {
+                        border-top: 0;
+                    }
+
+                    &.category-name {
+                        display: none;
+                    }
+                }
+
+                &.active {
+                    transform: translate3d(-100%,0,0);;
+                    -webkit-transform: translate3d(-100%,0,0);
+                    transition: transform .5s;
+                    z-index: 999;
+                    top: 0;
+                    height: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                    position: absolute;
+                    display: table !important;
+                }
+
+                &.old--parent {
+                    overflow: hidden;
+                    position: absolute;
+                    padding-bottom: 0;
+                    display: block !important;
+                    max-height: @_nav-height;
+
+                }
+            }
+
+            ul.animated.active:not(.old--parent) {
+                display: table !important;
+                .menu-content{
+                    width: 100%;
+                }
+            }
+
+            ul.level3 {
+                a {
+                    font-weight: normal;
+                }
+            }
+
+            ul.animated {
+                .lib-css(animation-name, none, 1);
+            }
+        }
+    }
+}

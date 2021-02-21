@@ -1,0 +1,87 @@
+& when (@media-common = true) {
+    // global base - prefix; (p, pt, pb, pr, pl, m, mt, mr, mb, ml) padding or margin indication; size in px (20, 30 etc);
+    // class will look like this base-pt-30 will add 30 px in top padding
+    .create-spacing(@prefix: base; @value:80;);
+    .create-spacing(@prefix: base; @value:75;);
+    .create-spacing(@prefix: base; @value:70;);
+    .create-spacing(@prefix: base; @value:65;);
+    .create-spacing(@prefix: base; @value:60;);
+    .create-spacing(@prefix: base; @value:55;);
+    .create-spacing(@prefix: base; @value:50;);
+    .create-spacing(@prefix: base; @value:45;);
+    .create-spacing(@prefix: base; @value:40;);
+    .create-spacing(@prefix: base; @value:35;);
+    .create-spacing(@prefix: base; @value:30;);
+    .create-spacing(@prefix: base; @value:25;);
+    .create-spacing(@prefix: base; @value:20;);
+    .create-spacing(@prefix: base; @value:15;);
+    .create-spacing(@prefix: base; @value:10;);
+    .create-spacing(@prefix: base; @value:5;);
+    .create-spacing(@prefix: base; @value:0;);
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__ml) {
+    // Desktop
+    .create-spacing(@prefix: lg; @value:80;);
+    .create-spacing(@prefix: lg; @value:75;);
+    .create-spacing(@prefix: lg; @value:70;);
+    .create-spacing(@prefix: lg; @value:65;);
+    .create-spacing(@prefix: lg; @value:60;);
+    .create-spacing(@prefix: lg; @value:55;);
+    .create-spacing(@prefix: lg; @value:50;);
+    .create-spacing(@prefix: lg; @value:45;);
+    .create-spacing(@prefix: lg; @value:40;);
+    .create-spacing(@prefix: lg; @value:35;);
+    .create-spacing(@prefix: lg; @value:30;);
+    .create-spacing(@prefix: lg; @value:25;);
+    .create-spacing(@prefix: lg; @value:20;);
+    .create-spacing(@prefix: lg; @value:15;);
+    .create-spacing(@prefix: lg; @value:10;);
+    .create-spacing(@prefix: lg; @value:5;);
+    .create-spacing(@prefix: lg; @value:0;);
+
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min')
+and (@break = @screen__s) and (@extremum2 = 'max') and (@break2 = @screen__ml) {
+
+    // tablet
+    .create-spacing(@prefix: md; @value:80;);
+    .create-spacing(@prefix: md; @value:75;);
+    .create-spacing(@prefix: md; @value:70;);
+    .create-spacing(@prefix: md; @value:65;);
+    .create-spacing(@prefix: md; @value:60;);
+    .create-spacing(@prefix: md; @value:55;);
+    .create-spacing(@prefix: md; @value:50;);
+    .create-spacing(@prefix: md; @value:45;);
+    .create-spacing(@prefix: md; @value:40;);
+    .create-spacing(@prefix: md; @value:35;);
+    .create-spacing(@prefix: md; @value:30;);
+    .create-spacing(@prefix: md; @value:25;);
+    .create-spacing(@prefix: md; @value:20;);
+    .create-spacing(@prefix: md; @value:15;);
+    .create-spacing(@prefix: md; @value:10;);
+    .create-spacing(@prefix: md; @value:5;);
+    .create-spacing(@prefix: md; @value:0;);
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    // small
+    .create-spacing(@prefix: sm; @value:80;);
+    .create-spacing(@prefix: sm; @value:75;);
+    .create-spacing(@prefix: sm; @value:70;);
+    .create-spacing(@prefix: sm; @value:65;);
+    .create-spacing(@prefix: sm; @value:60;);
+    .create-spacing(@prefix: sm; @value:55;);
+    .create-spacing(@prefix: sm; @value:50;);
+    .create-spacing(@prefix: sm; @value:45;);
+    .create-spacing(@prefix: sm; @value:40;);
+    .create-spacing(@prefix: sm; @value:35;);
+    .create-spacing(@prefix: sm; @value:30;);
+    .create-spacing(@prefix: sm; @value:25;);
+    .create-spacing(@prefix: sm; @value:20;);
+    .create-spacing(@prefix: sm; @value:15;);
+    .create-spacing(@prefix: sm; @value:10;);
+    .create-spacing(@prefix: sm; @value:5;);
+    .create-spacing(@prefix: sm; @value:0;);
+}

@@ -1,0 +1,197 @@
+@icons__awesome-font-path: '@{baseDir}fonts/fontawesome/fa-regular-400';
+@icons__awesome-brand-font-path: '@{baseDir}fonts/fontawesome/fa-brands-400';
+@icons__awesome-solid-font-path: '@{baseDir}fonts/fontawesome/fa-solid-900';
+@icons__awesome-light-font-path: '@{baseDir}fonts/fontawesome/fa-light-300';
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/Ambit/Ambit-Regular',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/Ambit/Ambit-SemiBold',
+        @font-weight: 600,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/Ambit/Ambit-SemiBoldItalic',
+        @font-weight: 600,
+        @font-style: italic
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__base,
+        @font-path: '@{baseDir}fonts/Ambit/Ambit-Bold',
+        @font-weight: 700,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family__quincycf,
+        @font-path: '@{baseDir}fonts/QuincyCF/QuincyCF-BlackItalic',
+        @font-weight: 600,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family__quincycf,
+        @font-path: '@{baseDir}fonts/QuincyCF/QuincyCF-BoldItalic',
+        @font-weight: 700,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family__quincycf,
+        @font-path: '@{baseDir}fonts/QuincyCF/QuincyCF-LightItalic',
+        @font-weight: 300,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family__quincycf,
+        @font-path: '@{baseDir}fonts/QuincyCF/QuincyCF-RegularItalic',
+        @font-weight: 400,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family__quincycf,
+        @font-path: '@{baseDir}fonts/QuincyCF/QuincyCF-MediumItalic',
+        @font-weight: 500,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @icons__awesome-font,
+        @font-path: @icons__awesome-font-path,
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @icons__awesome-brand-font,
+        @font-path: @icons__awesome-brand-font-path,
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    // used for filled icons
+    .lib-font-face(
+        @family-name: @icons__awesome-font,
+        @font-path: @icons__awesome-solid-font-path,
+        @font-weight: 900,
+        @font-style: normal
+    );
+
+    // used for light icons
+    .lib-font-face(
+        @family-name: @icons__awesome-font,
+        @font-path: @icons__awesome-light-font-path,
+        @font-weight: 300,
+        @font-style: normal
+    );
+
+    h1,
+    h2 {
+        .lib-css(letter-spacing, @h1__letter-spacing);
+    }
+
+    h3, h4, h5, h6 {
+        letter-spacing: @heading__letter-spacing;
+    }
+
+    .h1 {
+        &:extend(h1 all);
+    }
+
+    .h2 {
+        &:extend(h2 all);
+    }
+
+    .h3 {
+        &:extend(h3 all);
+    }
+
+    .h4 {
+        &:extend(h4 all);
+    }
+
+    .p {
+        &:extend(p all);
+    }
+
+    ul {
+        padding: 0 0 0 18px;
+        list-style: disc;
+    }
+
+    .custom-bullet {
+       // .abs-custom-bullet-list();
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__m - 1)) {
+    h1 {
+        .lib-font-size(@h1-mobile__font-size);
+        .lib-css(line-height, @h1-mobile__line-height);
+    }
+
+    h2 {
+        .lib-font-size(@h2-mobile__font-size);
+    }
+    .h1 {
+        &:extend(h1 all);
+    }
+    .h2 {
+        &:extend(h2 all);
+    }
+    .h3 {
+        &:extend(h3 all);
+    }
+    .h4 {
+        &:extend(h4 all);
+    }
+    .p {
+        &:extend(p all);
+    }
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__m) and (@extremum2 = 'max') and (@break2 = @screen__ml) {
+
+    h1 {
+        .lib-font-size(@h1-tablet__font-size);
+    }
+
+    h2 {
+        .lib-font-size(@h2-tablet__font-size);
+    }
+
+    .h1 {
+        &:extend(h1 all);
+    }
+    .h2 {
+        &:extend(h2 all);
+    }
+    .h3 {
+        &:extend(h3 all);
+    }
+    .h4 {
+        &:extend(h4 all);
+    }
+    .p {
+        &:extend(p all);
+    }
+}
+

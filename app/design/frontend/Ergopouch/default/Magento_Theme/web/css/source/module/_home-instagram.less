@@ -1,0 +1,111 @@
+& when (@media-common = true) {
+    .home-instagram {
+        background: @theme__color_brown4;
+        padding-bottom: 90px;
+        width: 100vw;
+        margin: 0 0 0 ~"calc(-50vw + 50%)";
+
+        .btn-follow-us {
+            display: block;
+            margin: 0 auto;
+            width: 140px;
+            color: @color-white;
+            border-color: @color-white;
+            text-transform: uppercase;
+            font-weight: 600;
+            .lib-font-size(14);
+
+        }
+    }
+
+    .mpinstagramfeed-container {
+        padding: 50px 136px;
+        max-width: 1440px;
+        margin: 0 auto;
+
+        .slick-arrow {
+            display: none !important;
+        }
+
+        .mpinstagramfeed-header {
+            h3 {
+                text-align: center;
+                color: @color-white;
+                .lib-font-size(30);
+                font-family: @font-family__quincycf;
+                font-weight: bold;
+                font-style: italic;
+                position: relative;
+                margin: 50px 0 36px;
+
+                &:before {
+                    content: "";
+                    width: 35px;
+                    height: 35px;
+                    position: absolute;
+                    top: -43px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: url("@{baseDir}/images/Instagram.svg") no-repeat 0 0;
+                }
+            }
+
+
+        }
+
+        .slick-list {
+            .slick-slide {
+                &.mpinstagramfeed-photo {
+                    margin: 0 5px;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+    .home-instagram {
+        padding-bottom: 66px;
+
+        .btn-follow-us {
+            margin: 0 15px;
+            width: auto;
+            max-width: none;
+        }
+    }
+
+    .mpinstagramfeed-container {
+        padding: 50px 0;
+        max-width: 100%;
+        padding: 50px 0 34px;
+
+        .mpinstagramfeed-header {
+            h3 {
+                .lib-font-size(25);
+                margin: 49px 0 38px;
+                letter-spacing: -0.5px;
+
+                &:before {
+                    top: -54px;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__s) and (@extremum2 = 'max') and (@break2 = @screen__ml) {
+    .home-instagram {
+        .btn-follow-us {
+            margin: 0 auto;
+            width: 140px;
+        }
+    }
+
+    .mpinstagramfeed-container {
+        padding-left: 30px;
+        padding-right: 30px
+    }
+}

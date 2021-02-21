@@ -1,0 +1,326 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+@slick-dot__width: 10px;
+@slick-dot__height: 10px;
+@slick-dot__color: @primary__color;
+@slick-dot__margin: 0 5px;
+@slick-dot__padding: 0;
+@slick-dot__border-radius: 10px;
+
+// Dot initial
+@slick-dot-button__padding: 0;
+@slick-dot-button__border:1px;
+@slick-dot-button__border-color: @border-primary__color;
+@slick-dot-button__background: transparent;
+@slick-dot-button__color: none;
+
+// Dot hover
+@slick-dot-button__hover-background: @primary__color;
+@slick-dot-button__hover-border:0;
+@slick-dot-button__hover-border-color:@border-primary__color;
+// Dot active
+@slick-dot-button__active-background: @primary__color;
+@slick-dot-button__active-border:0;
+@slick-dot-button__active-border-color:@border-primary__color;
+
+//
+//  Slick slider styles
+//  _____________________________________________
+& when (@media-common = true) {
+    .slick-slider {
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-touch-action: pan-y;
+        -ms-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        box-sizing: border-box;
+        display: block;
+        position: relative;
+        touch-action: pan-y;
+        user-select: none;
+    }
+
+
+    .slick-list {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+    }
+
+    .slick-track {
+        display: block;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        top: 0;
+
+        &:before,
+        &:after {
+            content: '';
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        .slick-loading & {
+            visibility: hidden;
+        }
+    }
+
+    .slick-slide {
+        display: none;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+        [dir='rtl'] & {
+            float: right;
+        }
+        img {
+            display: block;
+        }
+        &.slick-loading img {
+            display: none;
+        }
+
+        &.dragging img {
+            pointer-events: none;
+        }
+
+        .slick-initialized & {
+            display: block;
+        }
+
+        .slick-loading & {
+            visibility: hidden;
+        }
+
+        .slick-vertical & {
+            border: 1px solid transparent;
+            display: block;
+            height: auto;
+        }
+    }
+
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
+
+    .slick-prev {
+        left: 0;
+        background: url("@{baseDir}/images/back.svg") no-repeat center center;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:not(.primary) {
+            background: url("@{baseDir}/images/back.svg") no-repeat center center;
+        }
+
+        .lib-icon-font-symbol(
+            @_icon-font-content: @icon-chevron-left,
+            @_icon-font-position: before
+        );
+    }
+
+    .slick-next {
+        right: 0;
+        background: url("@{baseDir}/images/next.svg") no-repeat center center;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:not(.primary) {
+            background: url("@{baseDir}/images/next.svg") no-repeat center center;
+        }
+
+        .lib-icon-font-symbol(
+            @_icon-font-content: @icon-chevron-right,
+            @_icon-font-position: before
+        );
+    }
+
+    .slick-prev,
+    .slick-next {
+        -ms-transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+        border: none;
+        border-radius: 0;
+        color: transparent;
+        cursor: pointer;
+        display: block;
+        font-size: 0;
+        height: 60px;
+        line-height: 0;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 60px;
+        z-index: 101;
+
+        .lib-icon-font(
+            '',
+            @_icon-font-color: @color-gray-darken3,
+            @_icon-font-size: 38px,
+            @_icon-font-position: before
+        );
+
+        &.slick-disabled {
+            opacity: .2;
+        }
+
+
+        &:hover {
+
+            border: none;
+            &.slick-disabled {
+                opacity: .2;
+            }
+            &:before {
+                color: @color-gray-darken4;
+            }
+        }
+
+        &:before,
+        &:after {
+            opacity: 1;
+            display: none;
+        }
+
+        &:active,
+        &:focus,
+        &:not(.primary) {
+            border: none;
+            box-shadow: none;
+
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .slick-dots {
+        display: block;
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        margin: 15px 0;
+
+        li {
+            cursor: pointer;
+            display: inline-block;
+            height: @slick-dot__height;
+            margin: @slick-dot__margin;
+            padding: 0;
+            position: relative;
+            vertical-align: middle;
+            width: @slick-dot__width;
+            button {
+                background: @slick-dot-button__background;
+                border: 1px solid @slick-dot-button__border-color;
+                border-radius: @slick-dot__border-radius;
+                box-shadow: none;
+                cursor: pointer;
+                display: block;
+                height: @slick-dot__height;
+                padding: 0;
+                text-indent: -99999px;
+                transition: .3s;
+                width: @slick-dot__width;
+
+                &:hover {
+                    border: 1px solid @slick-dot-button__hover-background;
+                    background: @slick-dot-button__hover-background;
+                }
+
+                &:active,
+                &:focus,
+                &:not(.primary) {
+                    box-shadow: none;
+                }
+            }
+
+            &.slick-active {
+                button {
+                    background: @slick-dot-button__active-background;
+                }
+            }
+        }
+    }
+}
+
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+
+    // Product widget slider Dots
+    // ---------------------------
+    .widget,
+    .product-items {
+        .slick-track {
+            .parent-flex(row, nowrap);
+        }
+
+        .slick-slide {
+            height: inherit;
+        }
+
+        .slick-dots {
+            display: block !important;
+            position: relative;
+            top: auto;
+            bottom: auto;
+            text-align: center;
+            padding-left: 5px;
+            margin: 15px 0;
+
+            li {
+                &.slick-active {
+                    button {
+                        border: 1px solid @primary__color;
+                    }
+                }
+            }
+
+            li,
+            button {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}

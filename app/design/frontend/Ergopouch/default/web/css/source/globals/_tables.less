@@ -1,0 +1,49 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+@table-th__font-weight: @font-weight__regular;
+@table-th__font-size: 14px;
+@table-th__text-transform: false;
+@table-th__letter-spacing: false;
+@table-td__letter-spacing: false;
+
+@table-cell__padding-vertical: 8px;
+@_cell-padding-horizontal: 10px;
+@table__border-color: @primary__color;
+//
+//  Global Theme Tables Styling
+//  _____________________________________________
+
+& when (@media-common = true) {
+    table {
+        .lib-table();
+        .lib-table-bordered(
+            @_table_type: horizontal
+        );
+        .lib-table-typography();
+        .lib-table-caption();
+
+        > thead {
+            > tr {
+                > th {
+                    .lib-css(text-transform, @table-th__text-transform);
+                }
+            }
+        }
+
+        > thead,
+        > tbody,
+        > tfoot {
+            > tr {
+                > td {
+                    .lib-css(letter-spacing, @table-td__letter-spacing);
+                }
+
+                > th {
+                    .lib-css(letter-spacing, @table-th__letter-spacing);
+                }
+            }
+        }
+    }
+}

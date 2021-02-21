@@ -1,0 +1,36 @@
+
+.lib-grid-columns(@total-columns; @index: 1) when (@index =< @total-columns) {
+    .lib-grid-columns(@total-columns; (@index + 1));
+    .column-width-@{index},
+    div[data-calculated-width="column-width-@{index}"]{
+        .lib-css(max-width, percentage(@index / @total-columns));
+        .lib-css(width, 100%);
+        flex-basis:  ( percentage(@index / @total-columns) );
+        padding: 0 @gutter-width;
+        margin: 0 0 @gutter-width*2;
+    }
+}
+
+
+.lib-grid-columns-tablet(@total-columns; @index: 1) when (@index =< @total-columns) {
+    .lib-grid-columns-tablet(@total-columns; (@index + 1));
+    .column-width-@{index}-md,
+    div[data-width-md="column-width-@{index}"]{
+        .lib-css(max-width, percentage(@index / @total-columns));
+        .lib-css(width, percentage(@index / @total-columns));
+        padding: 0 @gutter-width-m;
+        margin: 0 0 @gutter-width-m*2;
+    }
+}
+
+
+.lib-grid-columns-mobile(@total-columns; @index: 1) when (@index =< @total-columns) {
+    .lib-grid-columns-mobile(@total-columns; (@index + 1));
+    .column-width-@{index}-sm,
+    div[data-width-sm="column-width-@{index}"]{
+        .lib-css(max-width, percentage(@index / @total-columns));
+        .lib-css(width, percentage(@index / @total-columns));
+        padding: 0 @gutter-width-sm;
+        margin: 0 0 @gutter-width-sm*2;
+    }
+}

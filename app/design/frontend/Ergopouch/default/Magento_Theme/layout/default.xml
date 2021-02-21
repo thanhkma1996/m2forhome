@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.content.wrapper" htmlTag="div" htmlClass="header-content__wrapper" />
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+            <container name="header.content.left" htmlTag="div" htmlClass="header-content__left" before="-"/>
+            <container name="header.content.centre" htmlTag="div" htmlClass="header-content__centre" after="header.content.left"/>
+            <container name="header.content.right" htmlTag="div" htmlClass="header-content__right" after="-">
+                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="header-authorization-link"
+                       template="Magento_Customer::account/link/authorization.phtml" after="top.search">
+                    <block class="Magento\Customer\Block\Account\Navigation" name="customer.links.logged-in" before="-">
+                        <block class="Magento\Framework\View\Element\Html\Link\Current"
+                               name="account.dashboard" before="-">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                                <argument name="path" xsi:type="string">customer/account</argument>
+                                <argument name="title" xsi:type="string">My Account</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Wishlist\Block\Link" name="account.wishlist">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">Wishlist</argument>
+                                <argument name="path" xsi:type="string">wishlist</argument>
+                                <argument name="title" xsi:type="string">Wishlist</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Framework\View\Element\Html\Link\Current"
+                               name="account.logout" after="-">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">Logout</argument>
+                                <argument name="path" xsi:type="string">customer/account/logout</argument>
+                                <argument name="title" xsi:type="string">Logout</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                </block>
+            </container>
+            <container name="header.content.mobile.menu" htmlTag="div" htmlClass="header-content__mobile-menu" after="-">
+                <block class="Ergopouch\Category\Block\Html\Topmenu" name="catalog.topnav.mobile.menu" template="Ergopouch_Category::mobile_menu.phtml"/>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="navigation.sections">
+            <block class="Magento\Framework\View\Element\Template" name="store.menu" group="navigation-sections" template="Magento_Theme::html/container.phtml">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Menu</argument>
+                </arguments>
+                <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav" template="Magento_Theme::html/topmenu.phtml" ttl="3600" before="-"/>
+                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="stores.links.account.mobile"
+                       template="Magento_Customer::html/links.phtml">
+                    <container name="stores.links.logged-in">
+                        <block class="Magento\Framework\View\Element\Html\Link\Current" name="account.dashboard">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                                <argument name="path" xsi:type="string">customer/account</argument>
+                                <argument name="title" xsi:type="string">My Account</argument>
+                                <argument name="attributes" xsi:type="array">
+                                    <item name="class" xsi:type="string">account-link</item>
+                                </argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Wishlist\Block\Link" name="account.wishlist">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">Wishlist</argument>
+                                <argument name="path" xsi:type="string">wishlist</argument>
+                                <argument name="title" xsi:type="string">Wishlist</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Framework\View\Element\Html\Link\Current"
+                               name="account.logout" after="-">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">Logout</argument>
+                                <argument name="path" xsi:type="string">customer/account/logout</argument>
+                                <argument name="title" xsi:type="string">Logout</argument>
+                                <argument name="attributes" xsi:type="array">
+                                    <item name="class" xsi:type="string">logout-link</item>
+                                </argument>
+                            </arguments>
+                        </block>
+                    </container>
+                    <block class="Magento\Framework\View\Element\Html\Links" name="header.links.mobile">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">header links</argument>
+                        </arguments>
+                        <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-signin">
+                            <arguments>
+                                <argument name="label" xsi:type="string">Login/Signup</argument>
+                                <argument name="path" xsi:type="string">customer/account/login</argument>
+                                <argument name="title" xsi:type="string">Login</argument>
+                                <argument name="attributes" xsi:type="array">
+                                    <item name="class" xsi:type="string">account-link</item>
+                                </argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Wishlist\Block\Link" name="header-wish-list-link">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">Wishlist</argument>
+                                <argument name="path" xsi:type="string">wishlist</argument>
+                                <argument name="title" xsi:type="string">Wishlist</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">164</argument>
+                <argument name="logo_img_height" xsi:type="number">40</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="header.panel">
+            <container name="panel-header__left" htmlClass="panel-header__left" htmlTag="div" before="-">
+                <block class="Magento\Cms\Block\Block" name="top-message">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">top-message</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="page.top">
+            <container name="page.title.section" htmlTag="div" htmlClass="page-title-section" after="-"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <container name="footer.column.1"  htmlTag="div" htmlClass="footer-column footer-column1" before="-">
+                <block class="Magento\Cms\Block\Block" name="footer_column_1">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_column_1</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="footer.column.2"  htmlTag="div" htmlClass="footer-column footer-column2 collapsible" after="footer.column.1">
+                <block class="Magento\Cms\Block\Block" name="footer_info">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_info</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="footer.column.1">
+            <block class="Magento\Cms\Block\Block" name="socials_and_need_help">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">socials_and_need_help</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <move element="form.subscribe" destination="footer.column.1" before="-"/>
+        <move element="copyright" destination="footer.column.1"/>
+        <move element="header-wrapper" destination="header.content.wrapper" />
+        <move element="logo" destination="header.content.left" />
+        <move element="navigation.sections" destination="header.content.centre" />
+        <move element="top.search" destination="header.content.right" before="-"/>
+        <move element="minicart" destination="header.content.right" /> <!--move mini cart vao ben trong div header-content__right-->
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="skip_to_content" remove="true" />
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceBlock name="top.links" remove="true" />
+        <referenceBlock name="store.links" remove="true" />
+    </body>
+</page>

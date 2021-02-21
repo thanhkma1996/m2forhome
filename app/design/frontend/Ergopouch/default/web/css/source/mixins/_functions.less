@@ -1,0 +1,130 @@
+//
+//  Styles Abstract Functions
+//  file created to replace default magento extends and simplify helper classes
+//  _____________________________________________
+
+//
+//  Product options list
+//  ---------------------------------------------
+
+@abs-product-options-list: {
+    dt {
+        clear: left;
+        float: left;
+        margin: 0 @indent__s @indent__xs 0;
+
+        &:after {
+            content: ': ';
+        }
+    }
+
+    dd {
+        display: inline-block;
+        float: left;
+        margin: 0 0 @indent__xs;
+    }
+};
+
+//
+//  Button reset width, floats, margins
+//  ---------------------------------------------
+
+@abs-button-responsive: {
+    .lib-button-responsive();
+};
+
+
+//
+//  Blocks in 2 columns
+//  ---------------------------------------------
+
+@abs-blocks-2columns: {
+    width: 48.8%;
+
+    &:nth-child(odd) {
+        clear: left;
+        float: left;
+    }
+
+    &:nth-child(even) {
+        float: right;
+    }
+};
+
+//
+//  Visually hidden / show visually hidden
+//  ---------------------------------------------
+
+@abs-visually-hidden: {
+    .lib-visually-hidden();
+};
+
+
+//
+//  Clearfix
+//  ---------------------------------------------
+
+@abs-add-clearfix: {
+    .lib-clearfix();
+};
+
+//
+//  Box-sizing
+//  ---------------------------------------------
+
+@abs-add-box-sizing: {
+    box-sizing: border-box;
+};
+
+
+//
+//  Abstract no display
+//  ---------------------------------------------
+
+@abs-no-display: {
+    display: none;
+};
+
+
+//
+//  Checkout Tooltip Content (position: top)
+//  ---------------------------------------------
+
+@abs-checkout-tooltip-content-position-top: {
+    .lib-css(right, @checkout-tooltip-content-mobile__right);
+    .lib-css(top, @checkout-tooltip-content-mobile__top);
+    left: auto;
+
+    &:before,
+    &:after {
+        .lib-arrow(
+            @_position: top,
+            @_size: @checkout-tooltip-icon-arrow__font-size,
+            @_color: @checkout-tooltip-content__background-color
+        );
+        .lib-css(margin-top, @checkout-tooltip-icon-arrow__left);
+        right: @indent__s;
+        left: auto;
+        top: 0;
+    }
+
+    &:before {
+        .lib-css(border-bottom-color, @checkout-tooltip-content__border-color);
+    }
+
+    &:after {
+        .lib-css(border-bottom-color, @checkout-tooltip-content__background-color);
+        top: 1px;
+    }
+};
+
+
+@abs-flex-position: {
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: distribute; // IE10
+    justify-content: space-between;
+    -ms-flex-align: center; // IE10
+    -webkit-align-items: center; // Safari / iOS
+    align-items: center;
+};
+

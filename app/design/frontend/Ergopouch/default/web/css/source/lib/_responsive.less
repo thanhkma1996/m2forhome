@@ -1,0 +1,133 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Responsive
+//  _____________________________________________
+
+//
+//  Media variables, that can be used for splitting styles into several files
+//  ---------------------------------------------
+
+@media-common: true; // Sets whether to output common styles (true|false)
+@media-target: 'all'; // Sets target device for styles output (all|desktop|mobile)
+
+
+//
+//  Responsive variables
+//  _____________________________________________
+
+@screen__xxs: 320px;
+@screen__xs: 480px;
+@screen__s: 680px;
+@screen__m: 768px;
+@screen__ml: 980px;
+@screen__l: 1024px;
+@screen__xl: 1280px;
+@screen__xxl: 1440px;
+
+
+//
+//  Media width mixin used to group styles output based on media queries
+//  ---------------------------------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__s) and (@extremum2 = 'max') and (@break2 = @screen__ml) {}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__m) and (@extremum2 = 'max') and (@break2 = @screen__ml) {}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__s) and (@extremum2 = 'max') and (@break2 = @screen__m) {}
+
+
+//
+//  Style groups for 'mobile' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+
+    @media only screen and (max-width: (@screen__xxs - 1)) { // 319px
+        .media-width('max', @screen__xxs);
+    }
+
+    @media only screen and (max-width: (@screen__xs - 1)) { //479px
+        .media-width('max', @screen__xs);
+    }
+
+    @media only screen and (max-width: (@screen__s - 1)) { // 679px
+        .media-width('max', @screen__s);
+    }
+
+    @media only screen and (max-width: (@screen__m)) { // 768px
+        .media-width('max', @screen__m);
+    }
+
+    @media only screen and (max-width: (@screen__m - 1)) { // 767px
+        .media-width('max', @screen__m - 1);
+    }
+
+    @media only screen and (max-width: (@screen__ml - 1)) { // 979px
+        .media-width('max', @screen__ml - 1);
+    }
+
+    @media all and (min-width: (@screen__s - 1)) and (max-width: (@screen__ml - 1)){  // 679px - 979px
+        .media-width('min', @screen__s, 'max', @screen__ml);
+    }
+
+    @media all and (min-width: (@screen__m)) and (max-width: (@screen__ml - 1)){
+        .media-width('min', @screen__m, 'max', @screen__ml);
+    }
+
+    @media all and (min-width: (@screen__s - 1)) and (max-width: (@screen__m - 1)){
+        .media-width('min', @screen__s, 'max', @screen__m);
+    }
+}
+
+//
+//  Style groups for 'desktop' devices
+//  ---------------------------------------------
+
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+
+    @media all and (min-width: @screen__s) {
+        .media-width('min', @screen__s);        //680px
+    }
+
+    @media all and (min-width: @screen__m),
+    print {
+        .media-width('min', @screen__m);        //768px
+    }
+
+    @media all and (min-width: (@screen__m + 1)),
+    print {
+        .media-width('min', (@screen__m + 1));  //769px
+    }
+
+    @media all and (min-width: @screen__ml),
+    print {
+        .media-width('min', @screen__ml);       // 980px
+    }
+
+    @media all and (min-width: @screen__l),
+    print {
+        .media-width('min', @screen__l);  // 1024px
+    }
+
+    @media all and (min-width: (@screen__l + 1)),
+    print {
+        .media-width('min', (@screen__l + 1));  // 1025px
+    }
+
+    @media all and (min-width: @screen__xl),
+    print {
+        .media-width('min', @screen__xl);       //1280px
+    }
+
+    @media all and (min-width: @screen__xxl),
+    print {
+        .media-width('min', @screen__xxl);      // 1440px
+    }
+
+}

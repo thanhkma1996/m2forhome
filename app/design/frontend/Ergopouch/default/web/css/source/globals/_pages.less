@@ -1,0 +1,56 @@
+@toolbar_pager__width: 60px;
+@toolbar_pager__height: 60px;
+
+@pager__font-size: @font-size__base;
+//
+//  Global Theme Pager Styling
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .pages {
+        .lib-pager();
+        height: @toolbar_pager__height; // IE fix
+        .item {
+            float: left; // IE fix
+        }
+
+        .page,
+        .item .previous,
+        .item .next  {
+            width: @toolbar_pager__width;
+            height: @toolbar_pager__height;
+            text-align: center;
+        }
+
+        strong.page,
+        a.page,
+        a.previous {
+            border-right: none;
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__ml ) { // 980px
+
+    .pages {
+        .item {
+            &:first-child {
+                .page,
+                .previous {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) { // 979px
+
+    .pages-items {
+        opacity: 0;
+        &.pager-js {
+           opacity: 1;
+        }
+    }
+}

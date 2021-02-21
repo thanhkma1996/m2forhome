@@ -1,0 +1,33 @@
+& when (@media-common = true) {
+    .block-brand-list {
+        padding: 60px 0;
+        ul {
+            max-width: 940px;
+            margin: 0 auto;
+            .parent-flex(row, nowrap);
+            list-style: none;
+
+            li {
+                a{
+                    display: block;
+                    text-align: center;
+                    img {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+    .block-brand-list {
+        padding: 48px 0;
+
+        ul {
+            li {
+                margin: 0 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+& when (@media-common = true) {
+    .block-our-brand {
+        position: relative;
+        padding-top: 160px;
+        padding-bottom: 123px;
+        margin-top: 54px;
+
+        &:after {
+            content: "";
+            width: 56.5%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            background: @theme__color_grey;
+            .lib-css(border-radius, 0 45% 45% 0, 1);
+        }
+
+        &:before {
+            content: "";
+            width: 100vw;
+            height: 100%;
+            position: absolute;
+            left: -100vw;
+            top: 0;
+            background: @theme__color_grey;
+        }
+
+        .slides {
+
+            li {
+                .parent-flex(row, nowrap);
+            }
+
+            .content {
+                width: 365px;
+                margin-right: 9.5%;
+                margin-left: 10.5%;
+            }
+
+            .heading {
+                .lib-font-size(14);
+                font-weight: 600;
+                margin: 0 0 33px;
+                letter-spacing: 0.2px;
+                text-transform: uppercase;
+                color: @theme__color_grey3;
+            }
+
+            .banner-description {
+                .lib-font-size(30);
+                color: @color-white;
+                .lib-line-height(40);
+            }
+
+            .slider-image-wrap {
+                margin-top: -25px;
+
+                .mobile {
+                    display: none;
+                }
+            }
+
+            .text-over-banner {
+                margin-top: 47px;
+                width: 130px;
+
+                a.button {
+                    text-transform: uppercase;
+                    .lib-font-size(14);
+                    letter-spacing: 0.2px;
+                    color: @color-white;
+                    border-color: @color-white;
+
+                    &:active,
+                    &:focus,
+                    &:hover {
+                        border-color: @theme__color_brown3;
+                        background: @theme__color_brown3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+    .block-our-brand {
+        margin: 54px -15px 0;
+        padding: 0;
+
+        &:after,
+        &:before {
+            display: none;
+        }
+
+        .slides {
+
+            li {
+                display: block;
+            }
+
+            .content {
+                width: 100%;
+                background: @theme__color_grey;
+                position: relative;
+                margin: 0;
+
+                &:after {
+                    content: "";
+                    width: 100%;
+                    height: 300px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -150px;
+                    z-index: -1;
+                    background: @theme__color_grey;
+                    .lib-css(border-radius, 0 0 45% 45%, 1);
+                }
+
+            }
+
+            .heading {
+                text-align: center;
+                margin-bottom: 14px;
+            }
+
+            .banner-description {
+                .lib-font-size(25);
+                .lib-line-height(35);
+                padding: 0 15px;
+                text-align: center;
+            }
+
+            .slider-image-wrap {
+                margin-top: 40px;
+                padding: 0 15px;
+            }
+
+            .text-over-banner {
+                width: 100%;
+                padding: 0 15px;
+                margin-top: 37px;
+
+                a.button {
+                    max-width: none;
+                }
+            }
+
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .block-our-brand {
+        .slides {
+            .slider-image-wrap {
+                .desktop {
+                    display: none;
+                }
+
+                .mobile {
+                    display: block;
+                    img {
+                        max-width: none;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

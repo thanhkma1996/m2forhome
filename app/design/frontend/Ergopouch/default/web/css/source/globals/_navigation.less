@@ -1,0 +1,456 @@
+// /**
+//  * Copyright © digital Internet, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Global Theme Navigation Styling
+//  _____________________________________________
+@overlay__opacity: 0.5;
+
+@navigation__background: false;
+
+// Navigation desktop base vars
+
+@navigation-desktop__inner-width: 1000px;
+@navigation-desktop__padding: 0 @layout-indent__width;
+@navigation-desktop__inner-padding: 0;
+@navigation-desktop_is-flex: false;
+@navigation-desktop_flex-direction: false;
+@navigation-desktop_justify-content: false;
+@navigation-desktop_justify-content-ie: false;
+
+// Navigation desktop level0 vars
+@navigation-level0-item_desktop__margin: 0;
+@navigation-level0-item_desktop__text-decoration: none;
+@navigation-level0-item_desktop__color: @primary__color;
+@navigation-level0-item_desktop__text-transform: uppercase;
+@navigation-level0-item_desktop__border: none;
+@navigation-level0-item_desktop__padding: 0 15px;
+@navigation-level0-item_desktop__align: center;
+@navigation-level0-item_desktop__line-height: 46px;
+@navigation-level0-item_desktop__background: false;
+@navigation-level0-item_desktop__font-weight: 600;
+@navigation-level0-item_desktop__font-size: 12px;
+
+@navigation-level0-item_desktop__hover__border: none;
+@navigation-level0-item_desktop__hover__color: @link__hover__color;
+@navigation-level0-item_desktop__hover__background: @color-white;
+@navigation-level0-item_desktop__hover__text-decoration: none;
+
+@navigation-level0-item_desktop__active__border-width: 0;
+@navigation-level0-item_desktop__active__color: @link__active__color;
+@navigation-level0-item_desktop__active__text-decoration: none;
+@navigation-level0-item_desktop__active__border-color: false;
+@navigation-level0-item_desktop__active__border-style: false;
+@navigation-level0-item_desktop__active__background: @color-white;
+
+
+// Navigation desktop arrow vars
+@submenu-desktop-arrow-content: '';
+@submenu-desktop-arrow-display: none;
+
+// Navigation desktop submenu variables
+
+@submenu-wrapper_desktop__padding: false;
+@submenu-wrapper_desktop__position-top: 50px;
+@submenu-wrapper_desktop__background: @color-white;
+
+@submenu-desktop__box-shadow: none;
+@submenu-desktop__border-width: 0;
+@submenu-desktop__padding: 30px 20px 60px;
+@submenu-desktop__inner-width: 1450px;
+@submenu-item-desktop__padding: 0 15px 0 0;
+
+// Navigation desktop submenu title vars
+@navigation-level1-heading_desktop__font-size: 18px;
+@navigation-level1-heading_desktop__line-height: inherit;
+@navigation-level1-heading_desktop__padding: 0 0 25px;
+@navigation-level1-heading_desktop__margin: 0;
+@navigation-level1-heading_desktop__background: none;
+@navigation-level1-heading_desktop__border: none;
+@navigation-level1-heading_desktop__color: @heading-primary__color;
+@navigation-level1-heading_desktop__font-weight: @font-weight__bold;
+@navigation-level1-heading_desktop__text-decoration: none;
+@navigation-level1-heading_desktop__hover__background: none;
+@navigation-level1-heading_desktop__hover__border: none;
+@navigation-level1-heading_desktop__hover__color: @heading-primary__color;
+@navigation-level1-heading_desktop__hover__text-decoration: none;
+@navigation-level1-heading_desktop__active__background: none;
+@navigation-level1-heading_desktop__active__border-color: none;
+@navigation-level1-heading_desktop__active__border-style: none;
+@navigation-level1-heading_desktop__active__border-width: none;
+@navigation-level1-heading_desktop__active__color: @heading-primary__color;
+@navigation-level1-heading_desktop__active__text-decoration: none;
+@navigation-level1-heading_desktop__active__border-width: 0;
+
+@navigation-level1-submenu_desktop__margin: 0;
+
+// Navigation desktop submenu item vars
+@navigation-level2_desktop__background: none;
+@navigation-level2_desktop__text-font-weight: normal;
+@navigation-level2_desktop__padding: 0 15px 12px 0;
+@navigation-level2_desktop__font-size: @font-size__base;
+@navigation-level2_desktop__line-height: inherit;
+@navigation-level2_desktop__color: @text-primary__color;
+@navigation-level2_desktop__hover__color: @text-primary__color;
+@navigation-level2_desktop__hover__background: none;
+@navigation-level2_desktop__active__color: @text-primary__color;
+@navigation-level2_desktop__active__background: none;
+@navigation-level2_desktop__active__border-width: 0;
+@navigation-level2_desktop__border: false;
+@navigation-level2_desktop__text-decoration: none;
+@navigation-level2_desktop__font-weight: @font-weight__regular;
+@navigation-level2_desktop__hover__border: false;
+@navigation-level2_desktop__hover__text-decoration: underline;
+@navigation-level2_desktop__active__border-color: false;
+@navigation-level2_desktop__active__border-style: false;
+@navigation-level2_desktop__active__text-decoration: underline;
+
+// END DESKTOP NAV
+// ------------------------------------
+
+// ------------------------------------
+/// Mobile Navigation Settings
+// ------------------------------------
+@navigation-mobile_section-title__background: @color-white;
+@navigation-mobile_section-title__border-color: solid @border-primary__color;
+@navigation-mobile_section-title-active__border-color: 1px solid @color-white;
+@navigation-mobile_section-title-active__background: @navigation-mobile_section-title__background;
+@navigation-mobile_section-content__background: @color-white;
+
+// Navigation Toggle Button vars
+@navigation-mobile_toggle__content: @icon-bars;
+@navigation-mobile_toggle__background-color: @primary__color;
+@navigation-mobile_toggle__color: @primary__color;
+@navigation-mobile_toggle__font-size: 19px;
+@navigation-mobile_toggle__line-height: 60px;
+@navigation-close-mobile_toggle__color: @color-white;
+// Navigation mobile vars
+@navigation-mobile__background: @color-white;
+@navigation-mobile__border: 0;
+@navigation-mobile__height: calc(~'100vh - 60px');
+
+// Navigation mobile items general vars
+@mobile-menu-item__padding: 3px 25px;
+@mobile-menu-item__line-height: 24px;
+
+// Navigation mobile level0 vars
+@mobile-level0-item__font-size: 20px;
+@mobile-level0-item__font-weight: @font-weight__bold;
+@mobile-level0-item__line-height: @mobile-menu-item__line-height;
+@mobile-level0-item__margin: 0;
+@mobile-level0-item__padding: 15px 25px;
+@mobile-level0-item__text-transform: uppercase;
+@mobile-level0-item__background: @color-white;
+@mobile-level0-item__border: none;
+@mobile-level0-item__color: @text-primary__color;
+@mobile-level0-item__text-decoration: none;
+@mobile-level0-item__active__background: none;
+@mobile-level0-item__active__border-color: none;
+@mobile-level0-item__active__border-style: none;
+@mobile-level0-item__active__border-width: 0;
+@mobile-level0-item__active__color: @text-primary__color;
+@mobile-level0-item__active__text-decoration: none;
+
+// Navigation mobile submenu vars
+@mobile-submenu__background: @color-white;
+@mobile-submenu__border: none;
+
+// Navigation mobile submenu level1 vars
+@mobile-level1-item__font-size: 16px;
+@mobile-level1-item__font-weight: @mobile-level0-item__font-weight;
+@mobile-level1-item__line-height: @mobile-menu-item__line-height;
+@mobile-level1-item__padding: @mobile-menu-item__padding;
+@mobile-level1-item__background: @mobile-submenu__background;
+@mobile-level1-item__border: 1px solid @border-primary__color;
+@mobile-level1-item__color: @text-primary__color;
+@mobile-level1-item__text-decoration: none;
+@mobile-level1-item__text-transform: capitalize;
+@mobile-level1-item__active__background: @color-white;
+@mobile-level1-item__active__border: 0;
+@mobile-level1-item__active__border-color: none;
+@mobile-level1-item__active__border-style: none;
+@mobile-level1-item__active__border-width: 0;
+@mobile-level1-item__active__color: @text-primary__color;
+@mobile-level1-item__active__text-decoration: none;
+
+// Navigation mobile submenu level2 vars
+@mobile-level2-item__font-size: @mobile-level0-item__font-size;
+@mobile-level2-item__font-weight: normal;
+@mobile-level2-item__line-height: @mobile-menu-item__line-height;
+@mobile-level2-item__padding: @mobile-menu-item__padding;
+@mobile-level2-item__background: @mobile-submenu__background;
+@mobile-level2-item__border: 1px solid @border-primary__color;
+@mobile-level2-item__color: @text-primary__color;
+@mobile-level2-item__text-decoration: none;
+@mobile-level2-item__text-transform: capitalize;
+@mobile-level2-item__active__background: @color-white;
+@mobile-level2-item__active__border: 0;
+@mobile-level2-item__active__border-color: none;
+@mobile-level2-item__active__border-style: none;
+@mobile-level2-item__active__border-width: 0;
+@mobile-level2-item__active__color: @text-primary__color;
+@mobile-level2-item__active__text-decoration: none;
+
+// Navigation mobile submenu icon vars
+@mobile-item-icon__color: @text-primary__color;
+@mobile-item-icon__font-size: 16px;
+@mobile-item-icon__font-weight: 600;
+
+// Navigation mobile submenu backlink vars
+@mobile-back-link__color: @text-primary__color;
+@mobile-back-link__font-size: @mobile-level0-item__font-size;
+@mobile-back-link__text-transform: uppercase;
+@mobile-back-link__background: transparent;
+@mobile-back-link__padding: @mobile-menu-item__padding;
+
+
+// Vertical Dropdown (can be removed if not used in theme, make sure that mixin is removed from global navigation mixin)
+// ------------------------------------------
+@vertical-submenu-left-block_desktop__max-width: 455px;
+@vertical-submenu-left-block_desktop__width:100%;
+@vertical-submenu-left-block__border: 1px solid @border-secondary__color;
+@vertical-submenu-left-block__padding: false;
+
+@vertical-submenu-right-block__border:false;
+@vertical-submenu-right-block__padding: 30px 10px 15px 6vw;
+
+@vertical-submenu-level1_desktop__padding: 20px 20px 20px 6vw;
+@vertical-submenu-level1_desktop__font-size:14;
+@vertical-submenu-level1_desktop__line-height: inherit;
+@vertical-submenu-level1_desktop__font-weight: @font-weight__bold;
+@vertical-submenu-level1_desktop__color: inherit;
+@vertical-submenu-level1_desktop__text-transform: uppercase;
+@vertical-submenu-level1_desktop__background:false;
+@vertical-submenu-level1_desktop__hover__background: @primary__color;
+@vertical-submenu-level1_desktop__hover__color: @color-white;
+@vertical-submenu-level1_desktop__hover__text-decoration:false;
+
+@vertical-submenu-level1-desktop-arrow-content: @icon-chevron-right;
+@vertical-submenu-level1-arrow_desktop__font-size: 18px;
+@vertical-submenu-level1-arrow_desktop__font-weight: @font-weight__bold;
+@vertical-submenu-level1-arrow_desktop__position-right: 5px;
+@vertical-submenu-level1-arrow_desktop__position-top: 17px;
+
+@vertical-submenu-level2_desktop__padding: 0 0 10px;
+@vertical-submenu-level2_desktop__font-size: 16;
+@vertical-submenu-level2_desktop__line-height: inherit;
+@vertical-submenu-level2_desktop__font-weight: @font-weight__regular;
+@vertical-submenu-level2_desktop__color: inherit;
+@vertical-submenu-level2_desktop__text-transform: none;
+@vertical-submenu-level2_desktop__background: false;
+@vertical-submenu-level2_desktop__hover__background: false;
+@vertical-submenu-level2_desktop__hover__color: false;
+@vertical-submenu-level2_desktop__hover__text-decoration: false;
+
+//
+//  Common
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__ml) {
+    .lib-magedelight-navigation-horizontal__desktop();
+
+    .section-item-title {
+        display: none;
+    }
+
+    .nav-toggle {
+        @abs-no-display();
+    }
+
+    .nav-sections-item-content > * {
+        display: none;
+    }
+
+    .nav-sections-item-content{
+        > .menu-container.horizontal-menu,
+        > nav.navigation {
+            display: block;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+    .nav-toggle {
+        .lib-icon-text-hide();
+        .lib-icon-font(
+            @_icon-font-content: @navigation-mobile_toggle__content,
+            @_icon-font-size: @navigation-mobile_toggle__font-size,
+            @_icon-font-color: @navigation-mobile_toggle__color,
+            @_icon-font-margin: 0,
+            @_icon-font-line-height: @navigation-mobile_toggle__line-height
+        );
+        width: 40px;
+        height: 60px;
+        text-align: right;
+        vertical-align: top;
+        padding-right: 8px;
+    }
+
+    .nav-sections {
+        -webkit-overflow-scrolling: touch;
+        .lib-css(transition, left .3s, 1);
+        height: 100%;
+        left: -100%;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding-right: 60px;
+        z-index: 1000;
+        max-width: 375px;
+
+        &-items {
+            .lib-clearfix();
+            position: relative;
+            z-index: 1;
+        }
+
+        &-item-title {
+            background: @navigation-mobile_section-title__background;
+            border: @navigation-mobile_section-title__border-color;
+            border-width: 0 0 1px 1px;
+            box-sizing: border-box;
+            float: left;
+            padding: 18px 0;
+            text-align: center;
+            width: 50%;
+
+            &.active {
+                border-bottom: @navigation-mobile_section-title-active__border-color;
+                background: @navigation-mobile_section-title-active__background;
+            }
+
+            .nav-sections-item-switch {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            &:first-child {
+                border-left: 0;
+            }
+
+            a {
+                font-weight: bold;
+                text-decoration: none;
+            }
+        }
+
+        &-item-content {
+            .lib-clearfix();
+            box-sizing: border-box;
+            background: @navigation-mobile_section-content__background;
+            float: right;
+            margin-left: -100%;
+            margin-top: 61px;
+            width: 100%;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        .nav-toggle {
+            z-index: 999;
+            position: absolute;
+            right: 0;
+            background: @navigation-mobile_toggle__background-color;
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            text-align: center;
+            line-height: 54px;
+            .lib-icon-font(
+                @_icon-font-content: @icon-times,
+                @_icon-font-size: 22px,
+                @_icon-font-color: @navigation-close-mobile_toggle__color,
+                @_icon-font-margin: 0
+            );
+
+            &:before {
+                font-weight: 300;
+            }
+        }
+
+        .header.links {
+            height: @navigation-mobile__height;
+            .lib-list-reset-styles();
+
+            li {
+                border-top: @mobile-level0-item__border;
+                margin-bottom: 0;
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                > span,
+                strong,
+                a {
+                    .lib-css(background, @mobile-level2-item__background);
+                    .lib-css(color, @mobile-level2-item__color);
+                    .lib-css(padding, @mobile-level2-item__padding);
+                    .lib-css(font-weight, @mobile-level2-item__font-weight);
+                    .lib-css(line-height, @mobile-level2-item__line-height);
+                    .lib-css(text-decoration, @mobile-level2-item__text-decoration);
+                    .lib-css(text-transform, @mobile-level2-item__text-transform);
+                    display: block;
+                    word-wrap: break-word;
+                    position: relative;
+                    z-index: 99;
+                }
+            }
+        }
+    }
+
+    .nav-before-open {
+        height: 100%;
+        overflow-x: hidden;
+        width: 100%;
+        position: fixed;
+
+        .page-wrapper {
+            .lib-css(transition, right .3s, 1);
+            height: 100%;
+            left: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    .nav-open {
+        &:after {
+            background: rgba(0, 0, 0, @overlay__opacity);
+            content: '';
+            display: block;
+            height: 100%;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .nav-sections {
+            left: 0;
+            z-index: 99;
+            background: transparent;
+        }
+    }
+
+    .lib-magedelight-navigation-horizontal__mobile();
+
+}
+
+
+
+

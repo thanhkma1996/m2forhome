@@ -1,0 +1,223 @@
+// /**
+//  * Copyright © digital Internet, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Global Theme Forms Styling
+//  _____________________________________________
+
+
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    input[type="radio"]:not(.rating),
+    input[type="checkbox"] {
+        display: none;
+
+        & + label {
+            line-height: 24px;
+            cursor: pointer;
+
+            .lib-icon-font(
+                @_icon-font-content: @checkbox-icon__content,
+                @_icon-font-size: @checkbox-icon__font-size,
+                @_icon-font-line-height: @checkbox-icon__line-height,
+                @_icon-font-color: @checkbox-icon__color,
+                @_icon-font-margin: @checkbox-icon__margin
+            );
+
+            &:before {
+                .lib-css(width, @checkbox__width);
+                .lib-css(height, @checkbox__height);
+                .lib-css(margin, @checkbox__margin);
+                .lib-css(border, @checkbox__border);
+                content: '';
+            }
+
+            > span {
+                .lib-css(line-height, @checkbox-icon__line-height);
+            }
+
+        }
+
+        &:checked {
+            & + label {
+                &:before {
+                    font-weight: @font-weight__bold;
+                    background: @theme__color_brown3;
+                }
+            }
+        }
+
+        &:disabled {
+            opacity: 1;
+
+            & + label {
+                color: @checkbox-label__disabled__color;
+
+                &:before {
+                    color: @checkbox__disabled__color;
+                    .lib-css(background, @checkbox__disabled__background);
+                }
+            }
+        }
+    }
+
+    input[type="checkbox"] {
+        & + label {
+            position: relative;
+            .lib-css(padding, @checkbox-label__padding);
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                .lib-css(background, @checkbox__background);
+                .lib-css(border-radius, @checkbox__border-radius);
+            }
+        }
+
+        &:checked {
+            & + label {
+                &:before {
+                    content: "" !important;
+                    font-weight: @font-weight__bold;
+                    background: @theme__color_brown3;
+                }
+            }
+        }
+    }
+
+    input[type="radio"]:not(.rating) {
+        & + label {
+            position: relative;
+
+            &:before {
+                .lib-css(background, @radio-button__background);
+                .lib-css(color, @radio-button-icon__color);
+                .lib-css(font-weight, @radio-button__font-weight);
+                .lib-css(height, @radio-button-icon__height);
+                .lib-css(line-height, @radio-button__line-height);
+                .lib-css(width, @radio-button-icon__width);
+                .lib-font-size(@radio-button-icon__font-size);
+                border-radius: 50%;
+                content: @radio-button-icon__content;
+            }
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            > span {
+                .lib-css(line-height, @radio-button__line-height);
+            }
+        }
+
+        &:checked {
+            & + label {
+                &:before {
+                    content: @radio-button-icon__content !important;
+                    .lib-css(font-weight, @radio-button__checked__font-weight);
+                    .lib-css(color, @radio-button-icon__checked__color);
+                }
+            }
+        }
+    }
+
+    .select-styling() {
+        .lib-css(appearance, none, 1);
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/PjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE4NS4zNDQgMTg1LjM0NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTg1LjM0NCAxODUuMzQ0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+PHBhdGggc3R5bGU9ImZpbGw6IzAxMDAwMjsiIGQ9Ik05Mi42NzIsMTQ0LjM3M2MtMi43NTIsMC01LjQ5My0xLjA0NC03LjU5My0zLjEzOEwzLjE0NSw1OS4zMDFjLTQuMTk0LTQuMTk5LTQuMTk0LTEwLjk5MiwwLTE1LjE4YzQuMTk0LTQuMTk5LDEwLjk4Ny00LjE5OSwxNS4xOCwwbDc0LjM0Nyw3NC4zNDFsNzQuMzQ3LTc0LjM0MWM0LjE5NC00LjE5OSwxMC45ODctNC4xOTksMTUuMTgsMGM0LjE5NCw0LjE5NCw0LjE5NCwxMC45ODEsMCwxNS4xOGwtODEuOTM5LDgxLjkzNEM5OC4xNjYsMTQzLjMyOSw5NS40MTksMTQ0LjM3Myw5Mi42NzIsMTQ0LjM3M3oiLz48L2c+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjwvc3ZnPg==);
+        background-size: 20px 13px;
+        background-position: 95% 53%;
+        background-repeat: no-repeat;
+        text-indent: .01em;
+        padding-right: 28px;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    select {
+        .select-styling();
+    }
+
+    .fieldset {
+        .lib-form-fieldset();
+
+        > .field,
+        > .fields > .field {
+            .lib-form-field();
+            .lib-css(max-width, @form-field__max-width);
+
+            &.no-label {
+                > .label {
+                    @abs-no-display();
+                }
+            }
+
+            &.required,
+            &._required {
+                .label {
+                    &:after {
+                        vertical-align: 2px;
+                    }
+                }
+            }
+
+
+            .note {
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+
+    .field {
+        &.new.password,
+        &.password{
+            .control {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-prefix-flex-direction(column);
+                position: relative;
+            }
+
+            input {
+                order: 1;
+            }
+
+            .password-weak {
+                .lib-icon-font(
+                    @_icon-font-content: @icon-exclamation-circle,
+                    @_icon-font-size: 18px,
+                    @_icon-font-color: @text-primary__color
+                );
+
+                &:before {
+                    position: absolute;
+                    top: 12px;
+                    right: 8px;
+                }
+            }
+
+            div.mage-error {
+                order: 3;
+            }
+
+            [data-role="password-strength-meter"] {
+                order: 2;
+                margin: 10px 0 5px;
+                .lib-font-size(14);
+                font-weight: @font-weight__bold;
+            }
+        }
+    }
+}

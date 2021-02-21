@@ -1,0 +1,480 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//  The contents of this file will get split into two output files: email.less and email-inline.less.
+//
+//  email.less
+//  Styles contained in the .email-non-inline() and .media-width() mixins will be output in the email.less file
+//  and will be included in a <style> tag in emails. Non-inline styles should be used for styles that can't be applied
+//  as inline CSS, such as media queries.
+//
+//  email-inline.less
+//  Styles not included in the mixins mentioned above will be included in the email-inline.less file.
+//  Since email client support for CSS in <style> tags is limited, the majority of styles should be added as "inline"
+//  styles. CSS will be applied to transactional email HTML via the Emogrifier library, which only has support for
+//  certain CSS selectors (source: https://github.com/jjriv/emogrifier#supported-css-selectors):
+//
+//  Supported selectors (examples in parenthesis):
+//      * ID (#logo)
+//      * class (.logo)
+//      * type (h1)
+//      * descendant (.logo > a)
+//      * child (.logo a)
+//      * adjacent (.logo + .second-example)
+//      * attribute presence (a[title])
+//      * attribute value (a[title="example"])
+//      * attribute only ([title="example"])
+//
+//  Unsupported selectors (examples in parenthesis):
+//      * first-child (div:first-child)
+//      * last-child (div:last-child)
+//      * nth-child (div:nth-child(3n+1))
+//      * universal (*)
+//      * pseudo (a:hover, a:active, a:focus, span:before, span:after, etc)
+
+//
+//  Variables
+//  _____________________________________________
+
+@font-size-unit-convert: false; // Prevents font-related measurements from being converted to the incompatible rem unit
+
+//
+//  Resets
+//  ---------------------------------------------
+
+//  Generic resets
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+        vertical-align: top;
+    }
+}
+
+//  Client-specific resets (from the Salted email template: https://github.com/rodriguezcommaj/salted)
+
+.email-non-inline() {
+    //  Prevent WebKit and Windows mobile from changing default text sizes
+    body,
+    table,
+    td,
+    a {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    //  Allow smoother rendering of resized images in Internet Explorer (such as high-resolution logo)
+    img {
+        -ms-interpolation-mode: bicubic;
+    }
+
+    //  Remove spacing between tables in Outlook 2007 and up
+    table,
+    td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
+}
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  See email-fonts.less for @font-face declarations
+
+.lib-typography-all();
+
+body {
+    font-family: @font-family__base;
+    font-weight: normal;
+    text-align: left;
+}
+
+th,
+td {
+    font-family: @font-family__base;
+}
+
+a {
+    color: @link__color;
+    text-decoration: @link__text-decoration;
+}
+
+.email-non-inline() {
+
+    //  Remove link color on iOS
+    .no-link a {
+        color: @text__color !important;
+        cursor: default !important;
+        text-decoration: none !important;
+    }
+}
+
+//
+//  Layout
+//  ---------------------------------------------
+
+html,
+body {
+    background-color: @email__background-color;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.wrapper-inner {
+    padding-bottom: @email-content__padding__l;
+    width: 100%;
+}
+
+.main {
+    margin: 0 auto;
+    text-align: left; // Necessary to prevent all text from centering in Outlook 2003
+    width: @email-body__width;
+    letter-spacing: @heading__letter-spacing;
+}
+
+.header {
+    width: 100%;
+    vertical-align: middle;
+    font-weight: @font-weight__bold;
+    padding: 45px 0 35px;
+    border-bottom: 1px solid @border-primary__color;
+
+    .header-content {
+        width: 50%;
+        &.right {
+            padding-top: @indent__m;
+        }
+    }
+
+    strong {
+        display: block;
+        text-align: right;
+    }
+
+    table td {
+        vertical-align: middle;
+    }
+}
+
+.email-intro {
+    p {
+        margin-bottom: @indent__base - 5px;
+    }
+}
+
+.main-content {
+    background-color: @email-content__background-color;
+    padding: @indent__l 0;
+    width: 100%;
+
+    .primary.button {
+        background-color: @email__background-color;
+        padding: @indent__base 0 @indent__l;
+
+        a {
+            color: @email__button__color;
+
+            &:hover,
+            &:focus,
+            &:active {
+
+                .email-primary {
+                    background-color: @email__background-color !important;
+                    color: @email__theme__color__primary !important;
+                }
+            }
+        }
+    }
+
+    .email-primary {
+        .lib-css(border-radius, @button__border-radius, 1);
+        background-color: @email__theme__color__primary;
+        border: 2px solid @email__button-border__color;
+        color: @email__button__color;
+        font-size: @button__font-size;
+        padding: @indent__ml @indent__l;
+        font-weight: @font-weight__bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        letter-spacing: normal;
+    }
+}
+
+.order-info {
+    width: 50%;
+    &.left {
+        border-right: 1px solid @border-primary__color;
+        padding: 0;
+
+        p {
+            margin-right: @indent__l;
+
+        }
+    }
+
+    &.right {
+        text-align: right;
+        margin-top: -2px;
+        float: none;
+    }
+
+    .tel {
+        display: block;
+        font-weight: @font-weight__bold;
+        font-size: @h1-mobile__font-size;
+
+        a {
+            &:active,
+            &:hover,
+            &:visited {
+                text-decoration: none !important;
+            }
+        }
+    }
+
+    .email {
+        display: block;
+
+        a {
+            text-decoration: underline;
+            &:active,
+            &:hover,
+            &:visited {
+                text-decoration: underline !important;
+            }
+        }
+    }
+
+    .title {
+        max-width: 70%;
+    }
+}
+
+.footer {
+    padding: 0; // Reduce space between body of email and closing text
+    color: @color-white;
+}
+
+.footer-container {
+    background-color: @primary__color;
+    width: 100%;
+}
+
+.footer-links {
+    a,
+    strong {
+        color: @color-white;
+
+        &:hover,
+        &:active,
+        &:visited {
+            color: @color-white;
+        }
+    }
+
+    &-title {
+        margin-bottom: @indent__base - 5px;
+        font-size: 18px;
+    }
+}
+
+.footer-left,
+.footer-right {
+    padding: @indent__l @indent__base @indent__l @indent__base;
+    width: 50%;
+}
+
+.footer-right,
+.logo-right,
+.footer-logo,
+.links-right,
+.links-right td {
+    text-align: right;
+}
+
+.links-right {
+    max-width: 130px;
+}
+
+.external-links {
+    padding-top: 60px;
+    text-align: right;
+    a {
+        display: inline-block;
+        max-width: @indent__base;
+
+        span {
+            display: none;
+        }
+    }
+
+    .facebook {
+        img {
+            max-width: 12px;
+        }
+    }
+}
+
+.footer-bottom {
+    width: 100%;
+    color: @primary__color;
+    padding: @indent__base 0 @indent__l;
+}
+
+.footer-inner-large {
+    padding-bottom: 0;
+    border-bottom: 1px solid @border-primary__color;
+
+    .copyright,
+    .number {
+        padding: @indent__base 0;
+    }
+
+    .copyright {
+        width: 60%;
+    }
+
+    .number {
+        width: 40%;
+        text-align: right;
+    }
+}
+
+.footer-text {
+    padding: @indent__base 0 0;
+    .lib-font-size(14px);
+}
+
+.welcome {
+    &-contacts {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &-heading {
+        font-weight: @font-weight__bold;
+        margin-top: @indent__base;
+    }
+
+    &-list {
+        margin-left: @indent__l;
+    }
+}
+
+//  Layout (Mobile)
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    html,
+    body {
+        //  Change background/foreground to same color
+        background-color: @email-content__background-color;
+        width: 100% !important;
+    }
+
+    .main {
+        max-width: 100% !important;
+        min-width: 240px;
+        width: auto !important;
+    }
+}
+
+.product-image-wrapper {
+    .email-hidden {
+        display: none;
+    }
+
+    .product-image-photo {
+        width: 195px;
+
+        &.placeholder {
+            width: 195px;
+        }
+    }
+}
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+.email-non-inline() {
+    .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+        .button {
+            .inner-wrapper {
+                width: 100% !important;
+
+                td {
+                    a {
+                        font-size: @button__font-size + 2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Messages
+//  ---------------------------------------------
+
+.message-info,
+.message-gift {
+    width: @table__width;
+
+    td {
+        background-color: @message-email__background;
+        border: 1px solid @message-email__border-color;
+        color: @message-email__color;
+        margin: 0;
+        padding: @email-content__padding__base;
+
+        a {
+            color: @message-email-link__color;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+        }
+    }
+}
+
+.message-details {
+    margin-bottom: @indent__s;
+
+    b {
+        font-weight: bold;
+    }
+
+    td {
+        padding-bottom: @indent__xs;
+
+        b {
+            margin-right: @indent__s;
+        }
+    }
+}

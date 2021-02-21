@@ -1,0 +1,114 @@
+& when (@media-common = true) {
+    .block-bestseller-product {
+        background: @theme__color_grey3;
+        padding: 60px 20px;
+        width: 100vw;
+        margin: 90px 0 0 ~"calc(-50vw + 50%)";
+        background: @theme__color_grey3;
+
+        .range-block {
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .left-content {
+            width: 250px;
+            margin-left: 24px;
+
+            h2 {
+                .lib-font-size(50);
+                .lib-line-height(60);
+                margin: 155px 0 8px;
+            }
+
+            .cta-button {
+                margin-top: 49px;
+                width: 128px;
+            }
+        }
+
+        .right-content {
+            width: 73.8%;
+            margin-top: 35px;
+            margin-left: 50px;
+
+            .products-grid {
+                overflow: visible;
+            }
+
+            .product-item {
+                margin: 0 10px;
+            }
+
+            ol {
+                .parent-flex(row, nowrap);
+                list-style: none;
+            }
+        }
+
+        .container {
+            .parent-flex(row, nowrap);
+
+            .product-item-info {
+                max-width: none;
+                width: auto;
+
+                .product-image-container {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .slick-prev {
+            left: -38px;
+        }
+
+        .slick-next {
+            right: -38px;
+        }
+
+        .slick-next,
+        .slick-prev {
+            transform: translate(0, -100%);
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = (@screen__ml - 1)) {
+    .block-bestseller-product {
+        padding: 40px 15px 60px 15px;
+        margin-top: 35px;
+
+        .container {
+            display: block;
+        }
+
+        .left-content {
+            width: 100%;
+            margin-left: 0;
+
+            h2 {
+                margin: 0 0 16px;
+                .lib-font-size(40);
+                font-weight: 600;
+                letter-spacing: 0.2px;
+            }
+        }
+
+        .right-content {
+            width: auto;
+            margin: 13px -15px 0 -20px;
+            padding: 0;
+
+            ol {
+                margin-bottom: 20px;
+            }
+        }
+
+        .cta-button {
+            a {
+                max-width: none;
+            }
+        }
+    }
+}

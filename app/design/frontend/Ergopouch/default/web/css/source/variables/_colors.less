@@ -1,0 +1,98 @@
+//
+//  Theme Colours
+//  ---------------------------------------------
+@theme__color__red: #FFE6EA;
+@theme__color__green: rgba(198, 230, 215, 0.5);
+@theme__color__orange: #FFEFDD;
+@them__color_brown: #f2ece3;
+@theme__color_brown2: #A87C64;
+@theme__color_brown3: #D68663;
+@theme__color_brown4: #DFC7B0;
+@theme__color_brown5: rgba(223, 199, 176, 0.2);
+@theme__color_brown6: #f9f6f1;
+@theme__color_grey: #748b85;
+@theme__color_grey2: #F2F2F2;
+@theme__color_grey3: rgba(242, 236, 227, 0.5);
+@theme__color_grey4: #B1C4D4;
+@theme__color_grey5: #2D4E5F;
+@theme__color_grey6: rgba(0, 0, 0, 0.5);
+@theme__color_grey7: rgba(0, 0, 0, 0.2);
+@theme__color_grey8: rgba(116, 139, 133, 0.2);
+@theme__box_shadow: 0px 2px 10px 4px rgba(0, 0, 0, 0.05);
+@home_button__backgroud_color: rgba(255, 255, 255, 0.5);
+
+//  ---------------------------------------------
+// Global Base Colors
+//
+
+@primary__color: #323d3e;
+@primary__color__dark: darken(@primary__color, 35%);
+@primary__color__darker: darken(@primary__color, 13.5%);
+@primary__color__lighter: lighten(@primary__color, 29%);
+@primary__color__light: lighten(@primary__color, 45%);
+
+@secondary__color: @color-gray91; //#e8e8e8
+@secondary__color__light: lighten(@secondary__color, 5%);
+
+
+// Theme Body Elements colors
+// ------------------------------------
+
+// Theme Background Colors
+@page__background-color: @color-white;
+@primary__background-color: #323d3e;
+@secondary__background-color: @color-gray60; // #999999
+
+// Theme Image placeholder dummy
+@image-placeholder__background-color: @page__background-color; // #ffffff
+
+
+// Typography Colors (inherit from global but can be set individually)
+// Theme Headings Colour
+// ------------------------------------
+@heading-primary__color: @primary__color; // Primary Headings Color
+@heading-secondary__color: @secondary__color; // Secondary Heading Color
+
+// Theme Body Text Color
+// ------------------------------------
+@text-primary__color: @primary__color; // Primary Text Color
+@text-secondary__color: @secondary__color; // Secondary Text Color
+
+// Fallback colours for magento modules
+// ------------------------------------
+@text__color:	        @text-primary__color;	// Fallback to magento default variable (added to avoid compilation errors)
+@text__color__intense:	@primary__color__darker; // Fallback to magento default variable (added to avoid compilation errors)
+@text__color__muted:	@primary__color__lighter; // Fallback to magento default variable (added to avoid compilation errors)
+@addto-color:           @text-primary__color;	// Fallback to magento default variable (added to avoid compilation errors)
+@addto-hover-color:     @text-primary__color;	// Fallback to magento default variable (added to avoid compilation errors)
+
+// Theme Border Colors
+// ------------------------------------
+@border-primary__color: @primary__color; // Primary border color
+@border-secondary__color: 1px solid rgba(116, 139, 133, 0.2); // Secondary border color
+
+// Theme link colors
+// ------------------------------------
+@active__color: @theme__color__secondary;
+@error__color: @color-red10;
+
+// Validation colors
+@validation-error__background-color: @theme__color__red;
+@validation-warning__background-color: @theme__color__orange;
+@validation-success__background-color: @theme__color__green;
+
+// Theme Checkout Specific Colors
+// ------------------------------------
+@checkout-payment-option-title__border: @border-primary__color;
+
+//
+//  Tabs
+//  ---------------------------------------------
+@tab-content__border-top-status: true;
+
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+@sidebar__background-color: @color-white-smoke; // Used in cart sidebar, Checkout sidebar, Tier Prices, My account navigation, Rating block background

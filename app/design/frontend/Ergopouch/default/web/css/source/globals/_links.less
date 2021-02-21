@@ -1,0 +1,26 @@
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    a {
+        .abs-lib-link(
+            @_link-text-decoration: none,
+            @_link-text-decoration-hover: none
+        );
+
+        &.showcart,
+        &.sorter-action,
+        &.secondary,
+        &.towishlist,
+        &.create,
+        &.showcart {
+            .abs-lib-link(
+                @_link-text-decoration: none,
+                @_link-text-decoration-hover: none,
+                @_link-text-decoration-active:none
+            )
+        }
+    }
+}

@@ -1,0 +1,19 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+& when (@media-common = true) {
+    .lib-html5doctor-reset();
+    .lib-magento-reset(); // Reset default styles with magento-reset
+    .lib-set-default-border-box();
+
+    ._keyfocus *,
+    input:not([disabled]),
+    textarea:not([disabled]),
+    select:not([disabled]) {
+        &:focus {
+            .lib-css(box-shadow, none);
+        }
+    }
+}

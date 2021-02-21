@@ -1,0 +1,392 @@
+//
+//  Default Button
+//  ---------------------------------------------
+
+
+.abs-lib-button(
+    @_button-font-family: @button__font-family,
+    @_button-font-size: @button__font-size,
+    @_button-font-weight: @button__font-weight,
+    @_button-cursor: @button__cursor,
+    @_button-display: @button__display,
+    @_button-disabled-opacity: @button__disabled__opacity,
+    @_button-line-height: @button__line-height,
+    @_button-width: @button__width,
+    @_button-min-width: @button__min-width,
+    @_button-max-width: @button__max-width,
+    @_button-margin: @button__margin,
+    @_button-padding: @button__padding,
+    @_button-color: @button__color,
+    @_button-background: @button__background,
+    @_button-border: @button__border,
+
+    @_button-border-radius: @button__border-radius,
+    @_button__transition: @button__transition,
+    @_button__text-decoration: @button__text-decoration,
+    @_button__text-transform: @button__text-transform,
+    @_button__text-align: @button__text-align,
+    @_button-letter-spacing: @button__letter-spacing,
+
+    @_button-color-hover: @button__hover__color,
+    @_button-background-hover: @button__hover__background,
+    @_button-border-hover: @button__hover__border,
+    @_button-color-active: @button__active__color,
+    @_button-background-active: @button__active__background,
+    @_button-border-active: @button__active__border,
+
+    @_button-gradient: @button__gradient,
+    @_button-gradient-direction: @button__gradient-direction,
+    @_button-gradient-color-start: @button__gradient-color-start,
+    @_button-gradient-color-end: @button__gradient-color-end,
+    @_button-gradient-color-start-hover: @button__hover__gradient-color-start,
+    @_button-gradient-color-end-hover: @button__hover__gradient-color-end,
+    @_button-gradient-color-start-active: @button__active__gradient-color-start,
+    @_button-gradient-color-end-active: @button__active__gradient-color-end,
+
+    @_button-icon-use: @button-icon__use,
+    @_button-font-content: @button-icon__content,
+    @_button-icon-font: @button-icon__font,
+    @_button-icon-font-size: @button-icon__font-size,
+    @_button-icon-font-line-height: @button-icon__line-height,
+    @_button-icon-font-color: @button-icon__color,
+    @_button-icon-font-color-hover: @button-icon__hover__font-color,
+    @_button-icon-font-color-active: @button-icon__active__font-color,
+    @_button-icon-font-margin: @button-icon__margin,
+    @_button-icon-font-vertical-align: @button-icon__vertical-align,
+    @_button-icon-font-position: @button-icon__position,
+    @_button-icon-font-text-hide: @button-icon__text-hide
+) {
+    background-image: none; // Reset unusual Firefox-on-Android default style
+    .lib-css(background, @_button-background);
+    .lib-background-gradient(
+            @_button-gradient-color-start,
+            @_button-gradient-color-end,
+            @_button-gradient-direction,
+            @_button-gradient
+    );
+    .lib-css(border, @_button-border);
+    .lib-css(border-radius, @_button-border-radius);
+    .lib-css(color, @_button-color);
+    .lib-css(cursor, @_button-cursor);
+    .lib-css(display, @_button-display);
+    .lib-css(font-family, @_button-font-family);
+    .lib-css(font-weight, @_button-font-weight);
+    .lib-css(letter-spacing, @_button-letter-spacing);
+    .lib-css(margin, @_button-margin);
+    .lib-css(min-width, @_button-min-width);
+    .lib-css(padding, @_button-padding);
+    .lib-css(text-decoration, @_button__text-decoration);
+    .lib-css(text-transform, @_button__text-transform);
+    .lib-css(transition, @_button__transition);
+    .lib-css(width, @_button-width);
+    .lib-css(max-width, @_button-max-width);
+    .lib-font-size(@_button-font-size);
+    .lib-line-height(@_button-line-height);
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    ._lib-button-icon (
+        @_button-icon-use: @_button-icon-use,
+        @_icon-font-content: @_button-font-content,
+        @_icon-font: @_button-icon-font,
+        @_icon-font-size: @_button-icon-font-size,
+        @_icon-font-line-height: @_button-icon-font-line-height,
+        @_icon-font-color: @_button-icon-font-color,
+        @_icon-font-color-hover: @_button-icon-font-color-hover,
+        @_icon-font-color-active: @_button-icon-font-color-active,
+        @_icon-font-margin: @_button-icon-font-margin,
+        @_icon-font-vertical-align: @_button-icon-font-vertical-align,
+        @_icon-font-position: @_button-icon-font-position,
+        @_icon-font-text-hide: @_button-icon-font-text-hide
+    );
+
+    &:focus,
+    &:active {
+        .lib-css(text-decoration, @_button__text-decoration);
+        .lib-css(background, @_button-background-active);
+        .lib-background-gradient(
+                @_button-gradient-color-start-active,
+                @_button-gradient-color-end-active,
+                @_button-gradient-direction,
+                @_button-gradient
+        );
+        .lib-css(border, @_button-border-active);
+        .lib-css(color, @_button-color-active);
+    }
+    &:hover {
+        .lib-css(text-decoration, @_button__text-decoration);
+        .lib-css(background, @_button-background-hover);
+        .lib-background-gradient(
+                @_button-gradient-color-start-hover,
+                @_button-gradient-color-end-hover,
+                @_button-gradient-direction,
+                @_button-gradient
+        );
+        .lib-css(border, @_button-border-hover);
+        .lib-css(color, @_button-color-hover);
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        .lib-css(opacity, @_button-disabled-opacity);
+        cursor: default;
+        pointer-events: none; // Disabling of clicks
+    }
+
+    .isSafari & {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+//
+//  Button primary
+//  ---------------------------------------------
+
+.abs-lib-button-primary(
+    @_button-font-family: @button-primary__font-family,
+    @_button-font-size: @button-primary__font-size,
+    @_button-font-weight: @button-primary__font-weight,
+    @_button-line-height: @button-primary__line-height,
+    @_button-width: @button-primary__width,
+    @_button-min-width:@button-primary__min-width,
+    @_button-max-width: @button-primary__max-width,
+    @_button-margin: @button-primary__margin,
+    @_button-padding: @button-primary__padding,
+    @_button-color: @button-primary__color,
+    @_button-background: @button-primary__background,
+    @_button-border: @button-primary__border,
+    @_button-gradient-color-start: @button-primary__gradient-color-start,
+    @_button-gradient-color-end: @button-primary__gradient-color-end,
+    @_button-color-hover: @button-primary__hover__color,
+    @_button-background-hover: @button-primary__hover__background,
+    @_button-border-hover: @button-primary__hover__border,
+    @_button-gradient-color-start-hover: @button-primary__hover__gradient-color-start,
+    @_button-gradient-color-end-hover: @button-primary__hover__gradient-color-end,
+    @_button-color-active: @button-primary__active__color,
+    @_button-background-active: @button-primary__active__background,
+    @_button-border-active: @button-primary__active__border,
+    @_button-gradient-color-start-active: @button-primary__active__gradient-color-start,
+    @_button-gradient-color-end-active: @button-primary__active__gradient-color-end,
+    @_button-gradient: @button-primary__gradient,
+    @_button-gradient-direction: @button-primary__gradient-direction,
+    @_button-border-radius:@button-primary__border-radius,
+    @_button__text-decoration: @button-primary__text-decoration,
+    @_button__text-transform: @button-primary__text-transform,
+    @_button-letter-spacing: @button-primary__letter-spacing
+) {
+    .abs-lib-button(
+        @_button-font-family: @_button-font-family,
+        @_button-font-size: @_button-font-size,
+        @_button-font-weight: @_button-font-weight,
+        @_button-line-height: @_button-line-height,
+        @_button-width: @_button-width,
+        @_button-min-width:@_button-min-width,
+        @_button-max-width:@_button-max-width,
+        @_button-margin: @_button-margin,
+        @_button-padding: @_button-padding,
+        @_button-color: @_button-color,
+        @_button-background: @_button-background,
+        @_button-border: @_button-border,
+        @_button-color-hover: @_button-color-hover,
+        @_button-background-hover: @_button-background-hover,
+        @_button-border-hover: @_button-border-hover,
+        @_button-color-active: @_button-color-active,
+        @_button-background-active: @_button-background-active,
+        @_button-border-active: @_button-border-active,
+        @_button-gradient: @_button-gradient,
+        @_button-gradient-direction: @_button-gradient-direction,
+        @_button-gradient-color-start: @_button-gradient-color-start,
+        @_button-gradient-color-end: @_button-gradient-color-end,
+        @_button-gradient-color-start-hover: @_button-gradient-color-start-hover,
+        @_button-gradient-color-end-hover: @_button-gradient-color-end-hover,
+        @_button-gradient-color-start-active: @_button-gradient-color-start-active,
+        @_button-gradient-color-end-active: @_button-gradient-color-end-active,
+        @_button-border-radius: @_button-border-radius,
+        @_button__text-transform: @button-tocart__transform,
+        @_button__text-decoration: @_button__text-decoration,
+        @_button-letter-spacing:@_button-letter-spacing
+    );
+
+    .isSafari & {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+//
+//  Button primary
+//  ---------------------------------------------
+
+.abs-lib-button-secondary(
+    @_button-font-family: @button-secondary__font-family,
+    @_button-font-size: @button-secondary__font-size,
+    @_button-font-weight: @button-secondary__font-weight,
+    @_button-line-height: @button-secondary__line-height,
+    @_button-width: @button-secondary__width,
+    @_button-margin: @button-secondary__margin,
+    @_button-padding: @button-secondary__padding,
+    @_button-color: @button-secondary__color,
+    @_button-background: @button-secondary__background,
+    @_button-border: @button-secondary__border,
+    @_button-color-hover: @button-secondary__hover__color,
+    @_button-background-hover: @button-secondary__hover__background,
+    @_button-border-hover: @button-secondary__hover__border,
+    @_button-color-active: @button-secondary__active__color,
+    @_button-background-active: @button-secondary__active__background,
+    @_button-border-active: @button-secondary__active__border,
+    @_button-border-radius:@button-secondary__border-radius,
+    @_button__text-transform: @button-secondary__text-transform,
+    @_button-letter-spacing: @button-secondary__letter-spacing,
+    @_button__max-width: @button-secondary__max-width,
+    @_button__text-decoration: @button__text-decoration
+) {
+    .abs-lib-button(
+        @_button-font-family: @_button-font-family,
+        @_button-font-size: @_button-font-size,
+        @_button-font-weight: @_button-font-weight,
+        @_button-line-height: @_button-line-height,
+        @_button-width: @_button-width,
+        @_button-margin: @_button-margin,
+        @_button-padding: @_button-padding,
+        @_button-color: @_button-color,
+        @_button-background: @_button-background,
+        @_button-border: @_button-border,
+        @_button-color-hover: @_button-color-hover,
+        @_button-background-hover: @_button-background-hover,
+        @_button-border-hover: @_button-border-hover,
+        @_button-color-active: @_button-color-active,
+        @_button-background-active: @_button-background-active,
+        @_button-border-active: @_button-border-active,
+        @_button-border-radius: @_button-border-radius,
+        @_button__text-transform: @button-tocart__transform,
+        @_button-letter-spacing:@_button-letter-spacing,
+        @_button-max-width: @_button__max-width,
+        @_button__text-decoration: @button__text-decoration
+    );
+
+    .isSafari & {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+//
+//  toсart buttons
+//  ---------------------------------------------
+
+.lib-button-tocart(
+    @_button-font-size: @button-tocart__font-size,
+    @_button-font-weight: @button-tocart__font-weight,
+    @_button-line-height: @button-tocart__line-height,
+    @_button-width: @button-tocart__width,
+    @_button-min-width: @button-tocart__min-width,
+    @_button-max-width: @button-tocart__max-width,
+    @_button-margin: @button-tocart__margin,
+    @_button-padding: @button-tocart__padding,
+    @_button-color: @button-tocart__color,
+    @_button-background: @button-tocart__background,
+    @_button-border: @button-tocart__border,
+    @_button-color-hover: @button-tocart__hover__color,
+    @_button-background-hover: @button-tocart__hover__background,
+    @_button-border-hover: @button-tocart__hover__border,
+    @_button-color-active: @button-tocart__active__color,
+    @_button-background-active: @button-tocart__active__background,
+    @_button-border-active: @button-tocart__active__border,
+    @_button-border-radius:@button-tocart__border-radius,
+    @_button__text-transform: @button__text-transform,
+    @_button-letter-spacing: @button-tocart__letter-spacing
+
+) {
+    .abs-lib-button(
+        @_button-font-size: @_button-font-size,
+        @_button-font-weight: @_button-font-weight,
+        @_button-line-height: @_button-line-height,
+        @_button-width: @_button-width,
+        @_button-min-width: @_button-min-width,
+        @_button-margin: @_button-margin,
+        @_button-padding: @_button-padding,
+        @_button-color: @_button-color,
+        @_button-background: @_button-background,
+        @_button-border: @_button-border,
+        @_button-color-hover: @_button-color-hover,
+        @_button-background-hover: @_button-background-hover,
+        @_button-border-hover: @_button-border-hover,
+        @_button-color-active: @_button-color-active,
+        @_button-background-active: @_button-background-active,
+        @_button-border-active: @_button-border-active,
+        @_button-border-radius: @_button-border-radius,
+        @_button__text-transform: @button-tocart__transform,
+        @_button-letter-spacing:@_button-letter-spacing,
+        @_button-max-width: @_button-max-width
+    );
+
+    .isSafari & {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+//
+//  digital buttons
+//  ---------------------------------------------
+
+.lib-button-colors(
+     @_button-font-size: @button-colors__font-size,
+     @_button-color: @button-colors__color,
+     @_button-background: @button-colors__background,
+     @_button-border: @button-colors__border,
+     @_button-color-hover: @button-colors__hover__color,
+     @_button-background-hover: @button-colors__hover__background,
+     @_button-border-hover: @button-colors__hover__border,
+     @_button-color-active: @button-colors__active__color,
+     @_button-background-active: @button-colors__active__background,
+     @_button-border-active: @button-colors__active__border,
+     @_button-letter-spacing: @button-colors__letter-spacing,
+     @_button-padding: @button-colors__padding,
+     @_button-border-radius:@button-colors__border-radius,
+     @_button__text-transform: @button-colors__text-transform,
+     @_button-letter-spacing: @button-colors__letter-spacing
+
+) {
+    .abs-lib-button(
+        @_button-font-size: @_button-font-size,
+        @_button-padding: @_button-padding,
+        @_button-color: @_button-color,
+        @_button-background: @_button-background,
+        @_button-border: @_button-border,
+        @_button-color-hover: @_button-color-hover,
+        @_button-background-hover: @_button-background-hover,
+        @_button-border-hover: @_button-border-hover,
+        @_button-color-active: @_button-color-active,
+        @_button-background-active: @_button-background-active,
+        @_button-border-active: @_button-border-active,
+        @_button-letter-spacing: @_button-letter-spacing,
+        @_button-border-radius: @_button-border-radius,
+        @_button__text-transform: @_button__text-transform
+    );
+
+    .isSafari & {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+
+//
+//  Medium buttons
+//  ---------------------------------------------
+
+.abs-lib-button-m(
+    @_button-m-font-size: @button__font-size__m,
+    @_button-m-height: @button__line-height__m,
+    @_button-m-padding: @button__padding__m
+) {
+    .lib-button-size(
+        @_button-line-height: @_button-m-height,
+        @_button-padding: @_button-m-padding
+    );
+    .lib-font-size(@_button-m-font-size);
+}

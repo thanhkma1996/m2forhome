@@ -1,0 +1,196 @@
+//
+//Font families
+//  ---------------------------------------------
+
+
+@font-family-name__base: 'Ambit';
+@font-family__quincycf: 'quincycf';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+@icons__awesome-font: 'Font Awesome 5 Pro';
+@icons__awesome-brand-font: 'Font Awesome 5 Brands';
+@icons__font-name: @icons__awesome-font;
+//
+// Fonts settings
+//  ---------------------------------------------
+
+@font-size-ratio__base: 1.6;
+
+@font-size__base: unit((@root__font-size / 100) * 16 * @font-size-ratio__base, px);
+
+@font-size__xl: 21px; // 21px
+@font-size__l: 18px; // 18px
+@font-size__m: 14px; // 14px
+@font-size__s: 12px; // 12px
+@font-size__xs: 11px; // 11px
+
+
+@font-weight__regular: 400; //	Basic font weight
+@font-weight__light: 300; //	Light font weight
+@font-weight__semibold: 600; //	Semibold font weight
+@font-weight__bold: 700; //	Bold font weight
+@font-style__base: normal; //	Font style
+@font-style__emphasis: italic; //	Emphasis font style
+@line-height__s: 1.2;
+@line-height__base: 1.5; //	Base line height
+@line-height__m: 1.6; //	 Custom line-height
+@line-height__computed: floor(@font-size__base * @line-height__base); //	Computed line height depending on base font size
+
+
+@heading__letter-spacing: 0;
+@heading__letter-spacing-l: 0;
+@text__letter-spacing: -0.25px;
+
+
+//
+//  Borders
+//  ---------------------------------------------
+@border-width__base: 1px;
+@autocomplete-item__border: false;
+@autocomplete__background-color: false;
+@autocomplete__border: false;
+@autocomplete-item__hover__color: false;
+@autocomplete-item-amount__color: false;
+
+//
+//  Paragraphs
+//  ---------------------------------------------
+
+@p__margin-top: 0;
+@p__margin-bottom: @indent__s;
+
+
+//
+//  Headings
+//  ---------------------------------------------
+@heading__font-family__base: false; //Heading base font family
+@heading__font-style__base: false; //Heading base font style
+@heading__font-weight__base: @font-weight__bold; //Heading base font weight
+@heading__line-height__base: 1.1; // Heading base line height
+@heading_base__color: @heading-primary__color; //Heading base color
+@heading__margin-top__base: 24px; //Heading base margin top 24px
+@heading__margin-bottom__base: 24px; //Heading base margin bottom 24px
+
+//H1
+@h1__font-size: 36px; // 36px	H1 font size
+@h1__line-height: 48px; // 48px
+@h1__font-color: @heading-primary__color;
+@h1__font-family: @heading__font-family__base;
+@h1__font-weight: @heading__font-weight__base;
+@h1__font-style: @heading__font-style__base;
+@h1__margin-top: @heading__margin-top__base; //24px;
+@h1__margin-bottom: @heading__margin-bottom__base; //24px;
+@h1__letter-spacing: -0.8px;
+
+// H1 mobile
+@h1-tablet__font-size: 30px; //30px h1 global body h1 mobile size
+@h1_tablet__margin-top: @h1__line-height/2; //24px;
+@h1_tablet__margin-bottom: @h1__line-height/2; //24px;
+
+@h1-mobile__font-size: 24px; //24px h1 global body h1 mobile size
+@h1-mobile__line-height: 36px;
+@h1_mobile__margin-top: @h1__line-height/2; //24px;
+@h1_mobile__margin-bottom: @h1__line-height/2; //24px;
+
+//H2
+// H2 font size is set to 36px as per design most title elements are 36px and to keep site SEO friendly
+// repetitive use of h1 tag is strictly prohibited
+
+@h2__font-size: 24px; // 24px
+@h2__line-height: 36px; // 36px
+@h2__font-color: @heading-primary__color;
+@h2__font-family: @heading__font-family__base;
+@h2__font-weight: @heading__font-weight__base;
+@h2__font-style: @heading__font-style__base;
+@h2__margin-top: @heading__margin-top__base;
+@h2__margin-bottom: @heading__margin-bottom__base;
+@h2__letter-spacing: @h1__letter-spacing;
+
+// H2 mobile
+@h2-tablet__font-size: 24px; //24px h2 global body h1 mobile size
+@h2-mobile__font-size: @h2-tablet__font-size; //24px h2 global body h1 mobile size
+
+// /H3
+@h3__font-size: 18px; // 18px	H3 font size
+@h3__font-color: @heading-primary__color;
+@h3__font-family: @heading__font-family__base;
+@h3__font-weight: @heading__font-weight__base;
+@h3__font-style: @heading__font-style__base;
+@h3__line-height: @line-height__base;
+@h3__margin-top: @heading__margin-top__base; // 24px
+@h3__margin-bottom: @heading__margin-bottom__base/2; // 12px
+
+// H3 mobile
+@h3-mobile__font-size: ceil((@font-size__base * 1.1)); // 18px h3 global body h1 mobile size
+
+
+//H4
+
+@h4__font-size: @font-size__base; // 16px	H4 font size
+@h4__font-color: @heading-primary__color;
+@h4__font-family: @heading__font-family__base;
+@h4__font-weight: @heading__font-weight__base;
+@h4__font-style: @heading__font-style__base;
+@h4__line-height: @line-height__base;
+@h4__margin-top: @heading__margin-top__base;
+@h4__margin-bottom: @heading__margin-bottom__base/2;
+
+// H4 mobile
+@h4-mobile__font-size: @font-size__base; // 16px h4 global body h1 mobile size
+
+
+//H5
+
+@h5__font-size: @font-size__base; // 16px	H5 font size
+@h5__line-height: @line-height__base;
+@h5__font-color: @heading-primary__color;
+@h5__font-family: @heading__font-family__base;
+@h5__font-weight: @heading__font-weight__base;
+@h5__font-style: @heading__font-style__base;
+@h5__margin-top: @heading__margin-top__base;
+@h5__margin-bottom: @heading__margin-bottom__base/2;
+
+// H5 mobile
+@h5-mobile__font-size: @font-size__base; // 16px h5 global body h1 mobile size
+
+//H6
+
+@h6__font-size: @font-size__base; // 16px
+@h6__line-height: 24px;
+@h6__font-color: @heading-primary__color;
+@h6__font-family: @heading__font-family__base;
+@h6__font-weight: @heading__font-weight__base;
+@h6__font-style: @heading__font-style__base;
+@h6__margin-top: @heading__margin-top__base;
+@h6__margin-bottom: @heading__margin-bottom__base;
+
+// H6 mobile
+@h6-mobile__font-size: @font-size__base; // 16px h6 global body h1 mobile size
+
+//
+//  Lists
+//  ---------------------------------------------
+
+@list__color__base: @text-primary__color; //#333
+@list__font-size__base: @font-size__base; //16px
+@list__margin-top: 0;
+@list__margin-bottom: @indent__m; //25px
+
+@list-item__margin-top: 0;
+@list-item__margin-bottom: @indent__ml; //15px
+
+@dl__margin-top: 0;
+@dl__margin-bottom: 0;
+
+@dt__margin-top: 0;
+@dt__margin-bottom: 0;
+@dt__font-weight: @font-weight__bold;
+@dt__border-width: 0 0 1px 0;
+@dt__border-color: @border-primary__color;
+@dt__padding-top: @indent__ml; //15px
+@dt__padding-bottom: @indent__ml; //15px
+@dd-font-size: @font-size__base;
+@dt-font-size: @font-size__base;
+
+@dd__margin-top: @indent__base; //20px
+@dd__margin-bottom: @indent__ml; //15px
+

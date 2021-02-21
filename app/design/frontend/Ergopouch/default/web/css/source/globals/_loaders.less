@@ -1,0 +1,51 @@
+// /**
+//  * Copyright © digital Internet, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Local Variables
+//  _____________________________________________
+
+@loader__background: rgba(255,255,255,.5);
+@loader-overlay__z-index: 99999;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .load.indicator {
+        .lib-loader();
+        position: absolute;
+
+        > span {
+            display: none;
+        }
+    }
+
+    .loading-mask {
+        .lib-loading-mask();
+        background: @loader__background;
+
+        .loader {
+            > img {
+                .lib-loading-mask();
+            }
+
+            > p {
+                display: none;
+            }
+        }
+    }
+
+    body {
+        > .loading-mask {
+            z-index: @loader-overlay__z-index;
+        }
+    }
+
+    ._block-content-loading {
+        position: relative;
+    }
+}

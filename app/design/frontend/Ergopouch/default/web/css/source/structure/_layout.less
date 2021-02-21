@@ -1,0 +1,117 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+@layout-column-main__sidebar-offset: 2%;
+@layout-column__additional-sidebar-offset: @layout-column-main__sidebar-offset;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .page-wrapper {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .columns {
+        #lib-layout-columns();
+        width: 100%;
+    }
+
+    .breadcrumbs,
+    .page-title-wrapper,
+    .footer.content,
+    .page-wrapper > .page-bottom,
+    .block.category.event,
+    .top-container,
+    .page-main {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: @layout__max-width;
+        padding-left: @layout__width-xs-indent;
+        padding-right: @layout__width-xs-indent;
+        width: 100%;
+    }
+
+    .page-wrapper {
+        .checkout-index-index & {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-direction(column);
+            min-height: 100vh;
+        }
+    }
+
+    .category-description {
+        margin-left: @layout__width-xs-indent;
+        margin-right: @layout__width-xs-indent;
+    }
+}
+
+.media-width(@extremum, @break, @extremum2, @break2) when (@extremum = 'min') and (@break = @screen__m) and (@extremum2 = 'max') and (@break2 = @screen__ml) {
+    .breadcrumbs,
+    .page-title-wrapper,
+    .footer.content,
+    .page-wrapper > .page-bottom,
+    .block.category.event,
+    .top-container,
+    .page-main,
+    .copyright-wrapper {
+        padding-left: @layout__width-md-indent;
+        padding-right: @layout__width-md-indent;
+    }
+
+    .category-description {
+        margin-left: @layout__width-md-indent;
+        margin-right: @layout__width-md-indent;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__ml) {
+    .panel.header,
+    .breadcrumbs,
+    .page-title-wrapper,
+    .header.content,
+    .footer.content,
+    .page-wrapper > .page-bottom,
+    .block.category.event,
+    .top-container,
+    .page-main {
+        max-width: @layout__max-width;
+        padding-left: @layout-indent__width;
+        padding-right: @layout-indent__width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cms-index-index {
+        .page-main {
+            padding: 0;
+        }
+    }
+
+    .category-description {
+        margin-left: @layout-indent__width;
+        margin-right: @layout-indent__width;
+    }
+
+
+    .checkout-cart-index {
+        .crosssell,
+        .page-main {
+            max-width: 1200px;
+        }
+    }
+}
+
+
+
+

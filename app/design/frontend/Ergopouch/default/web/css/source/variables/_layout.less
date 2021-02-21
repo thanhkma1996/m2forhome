@@ -1,0 +1,75 @@
+//
+//  Layout variables
+//  _____________________________________________
+
+//  Widths
+@layout__width: ''; // for the fixed width layout
+@layout__max-width: 1440px;
+@layout-indent__width: 20px;
+@layout__width-md-indent: 15px;
+@layout__width-xs-indent: 15px;
+
+//  Classnames defining different layouts
+@layout-class-1column: page-layout-1column;
+@layout-class-2columns__left: page-layout-2columns-left;
+@layout-class-2columns__right: page-layout-2columns-right;
+@layout-class-3columns: page-layout-3columns;
+
+//  Variables used for layout grid
+@total-columns: 12;
+@total-columns-width: 100%;
+@gutter-width: 18px;	//Distanse between columns desktop
+@gutter-width-m: 15px;	//Distanse between columns desktop
+@gutter-width-sm: 12px;	//Distanse between columns desktop
+
+
+// Product and Blog posts gutters
+@item-grid_desktop-gutter: 5px;
+@item-grid_desktop-margin: 35px;
+
+// Product grid tablet
+@item-grid_tablet-gutter: 10px;
+@item-grid_tablet-margin: 25px;
+
+// Product grid mobile
+@item-grid_mobile-gutter: 7px;
+@item-grid_mobile-margin: 25px;
+
+@item-grid_desktop__border: 0.052083333%;
+@item-grid_mobile__border: 0.15%;
+
+//  Variables for layout columns
+@layout-column__width: @total-columns-width;
+
+
+// Desktop sidebar width
+@layout-column__sidebar-width: 26%;
+// Tablet sidebar width
+@layout-column__tablet__sidebar-width: 34%;
+@layout-column__tablet__left__sidebar-width: @layout-column__tablet__sidebar-width;
+@layout-column__left-width: @layout-column__sidebar-width;
+@layout-column__right-width: @layout-column__sidebar-width;
+@layout-column__tablet__right-width: @layout-column__tablet__sidebar-width;
+
+//  Variables for layout columns depending on layout used
+@layout-column-main__width-1: 100%;
+@layout-column-main__width-2-left: @layout-column__width - @layout-column__left-width;
+@layout-column-main__tablet__width-2-left: @layout-column__width - @layout-column__tablet__left__sidebar-width;
+@layout-column-main__width-2-right: @layout-column__width - @layout-column__right-width;
+
+@layout-column-main__tablet__width-2-right: @layout-column__width - @layout-column__tablet__right-width;
+@layout-column-main__width-3: @layout-column__width - @layout-column__left-width - @layout-column__right-width;
+
+//  Checkout columns width
+@layout-column-checkout__width-left: 3;
+@layout-column-checkout__width-main: @layout-column__width - @layout-column-checkout__width-left;
+
+
+// Spacing
+@indent__base:          20px; // 20px
+@indent__xl:            40px; // 40px
+@indent__l:             30px; // 30px
+@indent__m:             25px; // 25px
+@indent__ml:            15px; // 15px
+@indent__s:             10px; // 10px
+@indent__xs:            5px; // 5px

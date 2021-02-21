@@ -1,0 +1,330 @@
+// Top Icon position mixin
+.abs-icon-box(
+    @_icon-box-content: '',
+    @_icon-box-font: @icons__font-name,
+    @_icon-box-position: top,
+    @_icon-box-margin: 0,
+    @_icon-box-font-size: 24px,
+    @_icon-box-line-height: 32px,
+    @_icon-box-color: inherit,
+    @_icon-box-font-size: inherit,
+    @_icon-box-line-height: inherit,
+    @_icon-box-text-font-size: inherit,
+    @_icon-box-text-line-height: inherit,
+    @_icon-box-is-image: false,
+    @_icon-box-image-width: 26px,
+    @_icon-box-image-height: 26px,
+    @_icon-box-image-vertical-align: middle,
+    @_icon-box-image-position-x: 50%,
+    @_icon-box-image-position-y: 50%
+) when (@_icon-box-position = top) {
+
+    & when (@_icon-box-is-image = true) {
+        .lib-icon-image(
+            @_icon-image: @_icon-box-content,
+            @_icon-image-width: @_icon-box-image-width,
+            @_icon-image-height: @_icon-box-image-height,
+            @_icon-image-margin: @_icon-box-margin,
+            @_icon-image-vertical-align: @_icon-box-image-vertical-align,
+            @_icon-image-position-x: @_icon-box-image-position-x,
+            @_icon-image-position-y: @_icon-box-image-position-y
+        );
+    }
+
+    & when not (@_icon-box-is-image = true) {
+        .lib-icon-font(
+            @_icon-font-content: @_icon-box-content,
+            @_icon-font: @_icon-box-font,
+            @_icon-font-size: @_icon-box-font-size,
+            @_icon-font-line-height: @_icon-box-line-height,
+            @_icon-font-color: @_icon-box-color,
+            @_icon-font-margin: @_icon-box-margin
+        );
+    }
+
+    .lib-css(text-align, center);
+
+    > span,
+    > a {
+        display: inline-block;
+        margin: 0 auto;
+        vertical-align: top;
+        .lib-font-size(@_icon-box-text-font-size);
+        letter-spacing: @_icon-box-text-line-height;
+    }
+
+    &:before {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+
+//
+// Quick flexbox call mixin
+//  ---------------------------------------------
+
+.parent-flex(@direction; @wrap) {
+    .lib-vendor-prefix-display();
+    .lib-vendor-prefix-flex-wrap(@wrap);
+    .lib-vendor-prefix-flex-direction(@direction);
+}
+
+//
+//  Flex layout
+//  ---------------------------------------------
+
+.lib-vendor-prefix-display(
+    @_value: flex
+) {
+    display: ~"-webkit-box";
+    display: ~"-ms-@{_value}box";
+    display: @_value;
+}
+
+.lib-vendor-prefix-flex-wrap (
+    @_value: wrap
+) {
+    -ms-flex-wrap: wrap;
+    flex-wrap: @_value;
+}
+
+.lib-vendor-prefix-flex-basis (
+    @_value: auto
+) {
+    -ms-flex-preferred-size: @_value;
+    flex-basis: @_value;
+}
+
+.lib-vendor-prefix-flex-shrink (
+    @_value: 1
+) {
+    -ms-flex-negative: @_value;
+    flex-shrink: @_value;
+}
+
+.lib-vendor-prefix-flex-grow(
+    @_value: 0
+) {
+    -ms-flex-positive: @_value;
+    flex-grow: @_value;
+}
+
+.lib-vendor-prefix-order (
+    @_value: 0
+) {
+    -webkit-box-ordinal-group: @_value + 1;
+    -ms-flex-order: @_value;
+    order: @_value;
+}
+
+//Flex justify-content
+
+.lib-vendor-prefix-justify (
+    @_direction: @direction,
+    @_ie-direction: @ie-direction
+) {
+
+    ._lib-vendor-prefix-justify(@_direction, @_ie-direction);
+}
+
+._lib-vendor-prefix-justify(@_direction, @_ie-direction) when not(@_ie-direction = space-around) {
+    -webkit-box-pack: @_ie-direction;
+    -ms-flex-pack: @_ie-direction; // IE10 center | end | justify | start
+    justify-content: @_direction;
+}
+
+._lib-vendor-prefix-justify(@_direction, @_ie-direction) when (@_ie-direction = space-around ) {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+//
+// Generate margins and paddings
+//  ---------------------------------------------
+
+.create-spacing(@prefix; @value) {
+    .@{prefix}-p-@{value} {
+        padding: ~"@{value}px";
+    }
+    .@{prefix}-pt-@{value} {
+        padding-top: ~"@{value}px";
+    }
+    .@{prefix}-pl-@{value} {
+        padding-left: ~"@{value}px";
+    }
+    .@{prefix}-pr-@{value} {
+        padding-right: ~"@{value}px";
+    }
+    .@{prefix}-pb-@{value} {
+        padding-bottom: ~"@{value}px";
+    }
+    .@{prefix}-m-@{value} {
+        margin: ~"@{value}px";
+    }
+    .@{prefix}-mt-@{value} {
+        margin-top: ~"@{value}px";
+    }
+    .@{prefix}-ml-@{value} {
+        margin-left: ~"@{value}px";
+    }
+    .@{prefix}-mr-@{value} {
+        margin-right: ~"@{value}px";
+    }
+    .@{prefix}-mb-@{value} {
+        margin-bottom: ~"@{value}px";
+    }
+}
+
+//
+// Absolute position helper
+//  ---------------------------------------------
+
+.lib-absolute-position(
+    @_value1: 0,
+    @_value2: 0
+) {
+    position: absolute;
+    top: @_value1;
+    left: @_value2;
+    .lib-prefix-transform-translate(-@_value2, -@_value1);
+}
+
+.lib-prefix-transform-translate(
+    @_value1: 0,
+    @_value2: 0
+) {
+    -webkit-transform: translate(@_value1, @_value2);
+    -ms-transform: translate(@_value1, @_value2);
+    transform: translate(@_value1, @_value2);
+
+}
+
+.lib-prefix-transform-translateY(
+    @_value1: 0
+) {
+    -webkit-transform: translateY(@_value1);
+    -ms-transform: translateY(@_value1);
+    transform: translateY(@_value1);
+
+}
+
+.lib-prefix-transform-translateX(
+    @_value1: 0
+) {
+    -webkit-transform: translateX(@_value1);
+    -ms-transform: translateX(@_value1);
+    transform: translateX(@_value1);
+
+}
+
+//
+// Transition mixin helper
+//  ---------------------------------------------
+
+.lib-visibility-transition(
+    @_opacity: 0
+) {
+    -webkit-transition: visibility 0s, opacity @_opacity ease-in-out;
+    -o-transition: visibility 0s, opacity @_opacity ease-in-out;
+    transition: visibility 0s, opacity @_opacity ease-in-out;
+}
+
+.lib-appearance(
+    @_value: none
+) {
+    -moz-appearance: @_value;
+    -webkit-appearance: @_value;
+    appearance: @_value;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+.transition (@prop: all, @time: 0.5s, @ease: ease) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+//
+// Borders mixin helper
+//  ---------------------------------------------
+
+.lib-borders(
+    @_borderWidth: 1px,
+    @_borderColor: @border-primary__color,
+    @_borderRadius:0,
+    @_borderStyle: solid
+) {
+    .lib-css(border-width, @_borderWidth);
+    .lib-css(border-color, @_borderColor);
+    .lib-css(border-radius, @_borderRadius);
+    .lib-css(border-style, @_borderStyle);
+}
+
+//
+// Creates custom bullet point lists
+//  ---------------------------------------------
+
+.abs-custom-bullet-list(
+    @_list-margin: 0,
+    @_list-padding: 0,
+    @_list-item-padding: 0 0 0 15px,
+    @_list-item-line-height: 24px,
+    @_list_icon-top: 25px,
+    @_list_icon-content: @icon-circle,
+    @_list_icon-line-height: 24px,
+    @_list_icon-font-size: 4px,
+    @_list_icon-margin: 0 5px 0 0,
+    @_list_icon-color: inherit,
+    @_list_icon-vertical-align: top,
+    @_list_icon-font-weight: bold
+) {
+    .lib-css(margin, @_list-margin);
+    .lib-css(padding, @_list-padding);
+
+    li {
+        .lib-icon-font(
+            @_icon-font-content: @icon-circle,
+            @_icon-font-size: @_list_icon-font-size,
+            @_icon-font-line-height: @_list_icon-line-height,
+            @_icon-font-color: @_list_icon-color,
+            @_icon-font-margin: @_list_icon-margin,
+            @_icon-font-vertical-align: @_list_icon-vertical-align,
+            @_icon-font-position: before,
+            @_icon-font-display: block
+        );
+
+        .lib-css(line-height, @_list-item-line-height);
+        .lib-css(padding, @_list-item-padding);
+        list-style: none;
+        position: relative;
+
+
+        &:before {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: @_list_icon-top;
+            font-weight: @_list_icon-font-weight;
+            .lib-prefix-transform-translateY(-100%);
+        }
+    }
+}
+
+.abs-list-no-bullet {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 0;
+    }
+}
+
+
