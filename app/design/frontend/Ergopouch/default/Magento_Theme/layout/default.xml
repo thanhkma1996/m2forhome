@@ -49,7 +49,7 @@
             </container>
         </referenceContainer>
 
-        <referenceBlock name="navigation.sections">
+        <!-- <referenceBlock name="navigation.sections">
             <block class="Magento\Framework\View\Element\Template" name="store.menu" group="navigation-sections" template="Magento_Theme::html/container.phtml">
                 <arguments>
                     <argument name="title" translate="true" xsi:type="string">Menu</argument>
@@ -111,7 +111,7 @@
                     </block>
                 </block>
             </block>
-        </referenceBlock>
+        </referenceBlock> -->
 
         <referenceBlock name="logo">
             <arguments>
